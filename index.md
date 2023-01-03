@@ -1,4 +1,4 @@
-## Location
+## Team Members
 > Aadya Daita, Ellie Rozenkrants, Rebecca Su, Shreya Ahuja
 
 ## 2019 FRQs
