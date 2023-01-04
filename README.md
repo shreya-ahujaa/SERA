@@ -1,3 +1,9 @@
+## Team SERA
+- Scrum Master: Shreya Ahuja
+- Frontend Developer: Ellie Rozenkrants
+- Backend Developer: Aadya Daita
+- DevOps Manager: Rebecca Su
+
 ## The Reunion Project
 
 Usage
