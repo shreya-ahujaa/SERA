@@ -1,3 +1,5 @@
 remote_theme: pages-themes/cayman@v0.2.0
 title: "Team SERA"
 description: "Group Site for SERA project"
+collections:
+  permalink: /:title
