@@ -1,5 +1,5 @@
 remote_theme: pages-themes/cayman@v0.2.0
 title: "Team SERA"
 description: "Group Site for SERA project"
-url: https://shreya-ahujaa.github.io
+url: http://127.0.0.1:4000
 baseurl: 
