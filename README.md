@@ -1,8 +1,11 @@
-## Team SERA
-- Scrum Master: Shreya Ahuja
-- Frontend Developer: Ellie Rozenkrants
-- Backend Developer: Aadya Daita
-- DevOps Manager: Rebecca Su
+# Team SERA
+| | Role |
+|------|-------|
+| Aadya Daita | Backend Developer |
+| Ellie Rozenkrants | Frontend Developer | 
+| Rebecca Su | DevOps Manager |
+| Shreya Ahuja | Scrum Master|
+
 
 ## The Reunion Project
 
