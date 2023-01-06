@@ -1,5 +1,21 @@
 # 2019 FRQ 1: Calender
 
+
+
+<form action="">
+<label for="month">Month:</label>
+<input type="text" id="month" name="month" placeholder="mm">
+
+<label for="day">Day:</label>
+<input type="text" id="day" name="day" placeholder="dd">
+
+<label for="year">Year:</label>
+<input type="text" id="year" name="year" placeholder="yyyy">
+
+<input type="submit" value="Submit">
+</form> 
+
+
 <!-- HTML table fragment for page -->
 <table>
   <thead>
