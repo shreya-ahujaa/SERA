@@ -1,5 +1,20 @@
 # 2019 FRQ 1: Calender
+<script>
 
+function dayOfWeek() {
+    var month = document.getElementById("month").value;
+    var day = document.getElementById("day").value;
+    var year = document.getElementById("year").value;
+    var str_url = "/dayOfWeek/" + month + "/" + day + "/" + year;
+    console.log(str_url);
+    return str_url; 
+
+}
+
+<br>
+<br>
+
+</script>
 
 
 <label for="month">Month:</label>
@@ -20,22 +35,7 @@
 
 
 
-<script>
 
-function dayOfWeek() {
-    var month = document.getElementById("month").value;
-    var day = document.getElementById("day").value;
-    var year = document.getElementById("year").value;
-    var str_url = "/dayOfWeek/" + month + "/" + day + "/" + year;
-    console.log(str_url);
-    return str_url; 
-
-}
-
-<br>
-<br>
-
-</script>
 
 <!-- HTML table fragment for page -->
 <table>
