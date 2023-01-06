@@ -32,6 +32,16 @@
     </tbody>
     </table>
     <button id="bulbs" onclick="addBulbInfo()">Add bulb!</button>
+    <h2>Random Light Board (Colors Only)</h2>
+    <table>
+    <tbody id="board">
+    </tbody>
+    </table>
+    <h2>Random Light Board (Effects: Crossed Out, Italic, Underline, Bold)</h2>
+    <table>
+    <tbody id="boardWithEffect">
+    </tbody>
+    </table>
 </body>
 
 <script>
@@ -173,4 +183,57 @@ function addBulbInfo(){
     tr.appendChild(td);
     resultContainer.appendChild(tr);
   }
+
+  // fetch the API for multiple lights (light board)
+  fetch(board_url, options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+        console.log(data);
+        var index = 0;
+        for (let row = 0; row < 10; row++){ // rows of board
+          var tr = document.createElement("tr");
+          var trEffect = document.createElement("tr"); // columns of board
+          for (let col = 0; col < 10; col++){
+            var box = document.createElement("td");
+            var boxEffect = document.createElement("td");
+            box.style.backgroundColor = "rgb(" + data[index].light.red + ", " + data[index].light.green + ", " + data[index].light.blue + ")";
+            boxEffect.style.backgroundColor = "rgb(" + data[index].light.red + ", " + data[index].light.green + ", " + data[index].light.blue + ")";
+            // CSS for effects
+            if(data[index].light.effect == "Crossed_out"){
+              boxEffect.innerHTML = "SLASH SLASH SLASH";
+              boxEffect.style.textDecoration = "line-through";
+            }
+            else if (data[index].light.effect == "Italic"){
+              boxEffect.innerHTML = "Italic";
+              boxEffect.style.fontStyle = "italic";
+            }
+            else if(data[index].light.effect == "Underline"){
+              boxEffect.innerHTML = "Underline";
+              boxEffect.style.textDecoration = "underline";
+            }
+            else if(data[index].light.effect == "Bold"){
+              boxEffect.innerHTML = "Bold";
+              boxEffect.style.fontWeight = "bolder";
+            }
+            tr.appendChild(box);
+            trEffect.appendChild(boxEffect);
+            index ++; // iterating through list of JSON
+          }
+          board.appendChild(tr);
+          boardWithEffect.appendChild(trEffect);
+        }
+        })
+      })  
+  // catch fetch errors (ie Nginx ACCESS to server blocked)
+  .catch(err => {
+    error(err + " " + get_url);
+  });
+
 </script>
