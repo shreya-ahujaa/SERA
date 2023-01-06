@@ -42,6 +42,17 @@
     <tbody id="boardWithEffect">
     </tbody>
     </table>
+    <h2>Gradient</h2>
+    <table>
+    <tbody id="gradient">
+    </tbody>
+    </table>
+    <button id="gradBut" onclick="setGradient()">Create blue gradient!</button>
+    <table>
+    <tbody id="gradient2">
+    </tbody>
+    </table>
+    <button id="gradBut2" onclick="setGradient2()">Create red gradient!</button>
 </body>
 
 <script>
@@ -50,17 +61,8 @@
   const bulbInfo = document.getElementById("result");
   const boardInfo = document.getElementById("board");
   const boardWithEffect = document.getElementById("boardWithEffect");
-
-  // match buttons to functions
-  const bulb = document.getElementById("bulb");
-  bulb.onclick = function() {
-    getBulbInfo()
-  };
-  const bulbs = document.getElementById("bulbs");
-  bulbs.onclick = function() {
-    addBulbInfo()
-  };
-
+  const gradient = document.getElementById("gradient");
+  const gradient2 = document.getElementById("gradient2");
 
   // prepare fetch urls
   const url = "https://rebeccaaa.tk/api/light";
@@ -236,4 +238,37 @@ function addBulbInfo(){
     error(err + " " + get_url);
   });
 
+  function setGradient(){
+    var r = 0;
+    var g = 0;
+    var b = 255;
+    for (let row = 0; row < 10; row++){
+        var line = document.createElement("tr");
+        for (let col = 0; col < 10; col++){
+            var cell = document.createElement("td");
+            cell.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            line.appendChild(cell);
+        }    
+        r+=20;
+        g+=20;
+        gradient.appendChild(line);
+    }
+  }
+
+  function setGradient2(){
+    var r = 253;
+    var g = 29;
+    var b = 29;
+    for (let row = 0; row < 10; row++){
+        var line = document.createElement("tr");
+        for (let col = 0; col < 10; col++){
+            var cell = document.createElement("td");
+            cell.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            line.appendChild(cell);
+        }    
+        g+=20;
+        b-=10;
+        gradient2.appendChild(line);
+    }
+  }
 </script>
