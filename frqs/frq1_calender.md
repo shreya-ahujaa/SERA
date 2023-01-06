@@ -2,7 +2,6 @@
 
 
 
-<form action="">
 <label for="month">Month:</label>
 <input type="text" id="month" name="month" placeholder="mm">
 
@@ -11,10 +10,32 @@
 
 <label for="year">Year:</label>
 <input type="text" id="year" name="year" placeholder="yyyy">
+<br>
 
-<input type="submit" value="Submit">
-</form> 
+<button onclick="dayOfWeek()">Try it</button>
 
+
+<br>
+<br>
+
+
+
+<script>
+
+function dayOfWeek() {
+    var month = document.getElementById("month").value;
+    var day = document.getElementById("day").value;
+    var year = document.getElementById("year").value;
+    var str_url = "/dayOfWeek/" + month + "/" + day + "/" + year;
+    console.log(str_url);
+    return str_url; 
+
+}
+
+<br>
+<br>
+
+</script>
 
 <!-- HTML table fragment for page -->
 <table>
