@@ -21,6 +21,7 @@ function dayOfWeek() {
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
+          console.log(data.dayOfWeek);
       })
   })
   // catch fetch errors (ie Nginx ACCESS to server blocked)
