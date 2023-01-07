@@ -5,9 +5,28 @@ function dayOfWeek() {
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     var year = document.getElementById("year").value;
-    var str_url = "/dayOfWeek/" + month + "/" + day + "/" + year;
+    var str_url = "https://csa.rebeccaaa.tk/api/calendar/dayOfWeek/" + month + "/" + day + "/" + year;
     console.log(str_url);
-    return str_url; 
+
+
+  // fetch the API
+  fetch(str_url, options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+      })
+  })
+  // catch fetch errors (ie Nginx ACCESS to server blocked)
+  .catch(err => {
+    error(err + " " + get_url);
+  });
 
 }
 
