@@ -6,15 +6,6 @@
 //is leap year code
 
 function isLeapYear(){
-
-    document.getElementById("sunday_year_firstday").innerHTML = " ";
-    document.getElementById("monday_year_firstday").innerHTML = " ";
-    document.getElementById("tuesday_year_firstday").innerHTML = " ";
-    document.getElementById("wednesday_year_firstday").innerHTML = " ";
-    document.getElementById("thursday_year_firstday").innerHTML = " ";
-    document.getElementById("friday_year_firstday").innerHTML = " ";
-    document.getElementById("saturday_year_firstday").innerHTML = " ";
-
     var year_leap = document.getElementById("year_leap").value;
 
     var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_leap;
@@ -44,6 +35,15 @@ function isLeapYear(){
 // first day of the year code
 
 function firstDayOfYear(){
+
+    document.getElementById("sunday_year_firstday").innerHTML = " ";
+    document.getElementById("monday_year_firstday").innerHTML = " ";
+    document.getElementById("tuesday_year_firstday").innerHTML = " ";
+    document.getElementById("wednesday_year_firstday").innerHTML = " ";
+    document.getElementById("thursday_year_firstday").innerHTML = " ";
+    document.getElementById("friday_year_firstday").innerHTML = " ";
+    document.getElementById("saturday_year_firstday").innerHTML = " ";
+    
     var year_firstday = document.getElementById("year_firstday").value;
     var str_url_year_firstday = "https://csa.rebeccaaa.tk/api/calendar/firstDayOfYear/" + year_firstday;
     console.log(str_url_year_firstday)
