@@ -81,6 +81,7 @@
   const get_url = url + "/random";
   const board_url = url + "/board";
 
+  // Modify CSS for bulb effects
   function showBulb(eff, cell){
     cell.style.backgroundColor = "rgb(" + eff.red + ", " + eff.green + ", " + eff.blue + ")";
     if(eff.effect == "Crossed_out"){
