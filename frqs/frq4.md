@@ -1,5 +1,8 @@
 # 2019 FRQ 4: Light Board
 
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
 <!-- HTML must be above JS to create result body before JS access -->
 <body>
     <h2>Single Light Bulb Info</h2>
@@ -37,7 +40,7 @@
     <tbody id="board">
     </tbody>
     </table>
-    <h2>Random Light Board (Effects: Crossed Out, Italic, Underline, Bold)</h2>
+    <h2>Random Light Board (Effects: Crossed Out, Italic, Underline, Bold, Faint)</h2>
     <table>
     <tbody id="boardWithEffect">
     </tbody>
@@ -101,6 +104,7 @@ function getBulbInfo(){
       response.json().then(data => {
         console.log(data);
         const tr = document.createElement("tr");
+        tr.setAttribute("id","row1");
         // td for red
         const red = document.createElement("td");
         red.innerHTML = data.red;
@@ -221,7 +225,7 @@ function addBulbInfo(){
               boxEffect.innerHTML = "SLASH SLASH SLASH";
               boxEffect.style.textDecoration = "line-through";
             }
-            else if (data[index].light.effect == "Italic"){
+            else if(data[index].light.effect == "Italic"){
               boxEffect.innerHTML = "Italic";
               boxEffect.style.fontStyle = "italic";
             }
@@ -233,9 +237,24 @@ function addBulbInfo(){
               boxEffect.innerHTML = "Bold";
               boxEffect.style.fontWeight = "bolder";
             }
+            else if(data[index].light.effect == "Faint"){
+              boxEffect.innerHTML = "Faint";
+              boxEffect.style.opacity = "0.3";
+            }
+            // else if(data[index].light.effect == "Conceal"){
+            //   boxEffect.innerHTML = "Conceal";
+            //   boxEffect.setAttribute("id", "conceal");
+            //   $(document).ready(function() {
+            //     $("conceal").hover(
+            //       function() {
+            //         $(this).css("background-color", "black");
+            //       }, 
+            //     );
+            //   });
+            // }
             tr.appendChild(box);
             trEffect.appendChild(boxEffect);
-            index ++; // iterating through list of JSON
+            index++; // iterating through list of JSON
           }
           board.appendChild(tr);
           boardWithEffect.appendChild(trEffect);
@@ -299,3 +318,8 @@ function addBulbInfo(){
     }
   }
 </script>
+<!-- <style>
+    #conceal:hover {
+        background-color: black;
+    }
+</style> -->
