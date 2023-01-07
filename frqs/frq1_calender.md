@@ -6,9 +6,9 @@
 //is leap year code
 
 function isLeapYear(){
-    var year_firstday = document.getElementById("year_firstday").value;
+    var year_leap = document.getElementById("year_leap").value;
 
-    var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_firstday;
+    var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_leap;
     console.log(str_url_isLeapYear)
 
      fetch(str_url_isLeapYear)
@@ -52,19 +52,19 @@ function firstDayOfYear(){
           console.log(data);
           console.log(data.firstDayOfYear);
           document.getElementById("firstDayOfYear").innerHTML = data.firstDayOfYear;
-          if (data.dayOfWeek == 0) {
+          if (data.firstDayOfYear == 0) {
             document.getElementById("sunday_year_firstday").innerHTML = "it is a sunday!";
-          } else if (data.dayOfWeek == 1) {
+          } else if (data.firstDayOfYear == 1) {
             document.getElementById("monday_year_firstday").innerHTML = "it is a monday!";
-          } else if (data.dayOfWeek == 2) {
+          } else if (data.firstDayOfYear == 2) {
             document.getElementById("tuesday_year_firstday").innerHTML = "it is a tuesday!";
-          }else if (data.dayOfWeek == 3) {
+          }else if (data.firstDayOfYear == 3) {
             document.getElementById("wednesday_year_firstday").innerHTML = "it is a wednesday!";
-          }else if (data.dayOfWeek == 4) {
+          }else if (data.firstDayOfYear == 4) {
             document.getElementById("thursday_year_firstday").innerHTML = "it is a thursday!";
-          }else if (data.dayOfWeek == 5) {
+          }else if (data.firstDayOfYear == 5) {
             document.getElementById("friday_year_firstday").innerHTML = "it is a friday!";
-          }else if (data.dayOfWeek == 6) {
+          }else if (data.firstDayOfYear == 6) {
             document.getElementById("saturday_year_firstday").innerHTML = "it is a saturday!";
           }else {
             console.log("something went wrong, no day?");
