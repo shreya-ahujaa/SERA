@@ -1,5 +1,37 @@
 # 2019 FRQ 1: Calender
+
+
 <script>
+function numberOfLeapYears(){
+    var year1 = document.getElementById("year1").value;
+    var year2 = document.getElementById("year1").value;
+    var str_url = "https://csa.rebeccaaa.tk/api/calendar/numberOfLeapYears/" + year1 + "/" + year2;
+
+     fetch(str_url)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+          console.log(data.numberOfLeapYears);
+          document.getElementById("numberOfLeapYears").innerHTML = "there are " + data.numberOfLeapYears + "leap years in between!" ;
+      })
+  })
+  // catch fetch errors (ie Nginx ACCESS to server blocked)
+  .catch(err => {
+    error(err + " " + get_url);
+  });
+
+
+}
+
+
+
 
 function dayOfWeek() {
 
@@ -60,7 +92,20 @@ function dayOfWeek() {
 }
 
 </script>
+<h2>How many leap years are there between two given years?</h2>
+<label for="year1">Year 1:</label>
+<input type="text" id="year1" name="year1" placeholder="yyyy">
 
+<label for="year2">Year 2:</label>
+<input type="text" id="year2" name="year2" placeholder="yyyy">
+<button onclick="numberOfLeapYears()">Try it</button>
+<br>
+<h2 id="numberOfLeapYears"></h2>
+<br>
+<br>
+
+
+<h2>What day of the week is it?</h2>
 <label for="month">Month:</label>
 <input type="text" id="month" name="month" placeholder="mm">
 
@@ -72,17 +117,16 @@ function dayOfWeek() {
 <br>
 
 <button onclick="dayOfWeek()">Try it</button>
-<br>
+
 <br>
 <h3 id="dayofWeek_number"></h3>
-<h1 id="sunday"></h1>
-<h1 id="monday"></h1>
-<h1 id="tuesday"></h1>
-<h1 id="wednesday"></h1>
-<h1 id="thursday"></h1>
-<h1 id="friday"></h1>
-<h1 id="saturday"></h1>
-
+<h3 id="sunday"></h3>
+<h3 id="monday"></h3>
+<h3 id="tuesday"></h3>
+<h3 id="wednesday"></h3>
+<h3 id="thursday"></h3>
+<h3 id="friday"></h3>
+<h3 id="saturday"></h3>
 <br>
 <br>
 
