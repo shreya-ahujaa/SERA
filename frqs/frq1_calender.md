@@ -5,9 +5,9 @@
 function numberOfLeapYears(){
     var year1 = document.getElementById("year1").value;
     var year2 = document.getElementById("year1").value;
-    var str_url = "https://csa.rebeccaaa.tk/api/calendar/numberOfLeapYears/" + year1 + "/" + year2;
+    var str_url_numberOfLeapYears = "https://csa.rebeccaaa.tk/api/calendar/numberOfLeapYears/" + year1 + "/" + year2;
 
-     fetch(str_url)
+     fetch(str_url_numberOfLeapYears)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -47,12 +47,12 @@ function dayOfWeek() {
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     var year = document.getElementById("year").value;
-    var str_url = "https://csa.rebeccaaa.tk/api/calendar/dayOfWeek/" + month + "/" + day + "/" + year;
+    var str_url_dayOfWeek = "https://csa.rebeccaaa.tk/api/calendar/dayOfWeek/" + month + "/" + day + "/" + year;
     console.log(str_url);
 
 
   // fetch the API
-  fetch(str_url)
+  fetch(str_url_dayOfWeek)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
