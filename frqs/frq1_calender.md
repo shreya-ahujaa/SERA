@@ -2,6 +2,16 @@
 <script>
 
 function dayOfWeek() {
+
+    document.getElementById("sunday").innerHTML = " ";
+    document.getElementById("monday").innerHTML = " ";
+    document.getElementById("tuesday").innerHTML = " ";
+    document.getElementById("wednesday").innerHTML = " ";
+    document.getElementById("thursday").innerHTML = " ";
+    document.getElementById("friday").innerHTML = " ";
+    document.getElementById("saturday").innerHTML = " ";
+
+
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     var year = document.getElementById("year").value;
@@ -64,15 +74,14 @@ function dayOfWeek() {
 <button onclick="dayOfWeek()">Try it</button>
 <br>
 <br>
-<p id="dayofWeek_number"></p>
-<br>
-<p id="sunday"></p>
-<p id="monday"></p>
-<p id="tuesday"></p>
-<p id="wednesday"></p>
-<p id="thursday"></p>
-<p id="friday"></p>
-<p id="saturday"></p>
+<h3 id="dayofWeek_number"></h3>
+<h1 id="sunday"></h1>
+<h1 id="monday"></h1>
+<h1 id="tuesday"></h1>
+<h1 id="wednesday"></h1>
+<h1 id="thursday"></h1>
+<h1 id="friday"></h1>
+<h1 id="saturday"></h1>
 
 <br>
 <br>
