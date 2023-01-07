@@ -4,7 +4,7 @@
 <script>
 function numberOfLeapYears(){
     var year1 = document.getElementById("year1").value;
-    var year2 = document.getElementById("year1").value;
+    var year2 = document.getElementById("year2").value;
     var str_url_numberOfLeapYears = "https://csa.rebeccaaa.tk/api/calendar/numberOfLeapYears/" + year1 + "/" + year2;
     console.log(str_url_numberOfLeapYears)
 
