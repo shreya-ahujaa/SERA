@@ -6,6 +6,7 @@ function numberOfLeapYears(){
     var year1 = document.getElementById("year1").value;
     var year2 = document.getElementById("year1").value;
     var str_url_numberOfLeapYears = "https://csa.rebeccaaa.tk/api/calendar/numberOfLeapYears/" + year1 + "/" + year2;
+    console.log(str_url_numberOfLeapYears)
 
      fetch(str_url_numberOfLeapYears)
     // response is a RESTful "promise" on any successful fetch
@@ -19,13 +20,10 @@ function numberOfLeapYears(){
       response.json().then(data => {
           console.log(data);
           console.log(data.numberOfLeapYears);
-          document.getElementById("numberOfLeapYears").innerHTML = "there are " + data.numberOfLeapYears + "leap years in between!" ;
+          document.getElementById("numberOfLeapYears").innerHTML = "there are " + data.numberOfLeapYears + " leap years in between!" ;
       })
   })
-  // catch fetch errors (ie Nginx ACCESS to server blocked)
-  .catch(err => {
-    error(err + " " + get_url);
-  });
+
 
 
 }
@@ -47,12 +45,12 @@ function dayOfWeek() {
     var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
     var year = document.getElementById("year").value;
-    var str_url_dayOfWeek = "https://csa.rebeccaaa.tk/api/calendar/dayOfWeek/" + month + "/" + day + "/" + year;
+    var str_url = "https://csa.rebeccaaa.tk/api/calendar/dayOfWeek/" + month + "/" + day + "/" + year;
     console.log(str_url);
 
 
   // fetch the API
-  fetch(str_url_dayOfWeek)
+  fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
