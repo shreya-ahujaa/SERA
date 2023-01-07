@@ -13,6 +13,7 @@
         <th>Green</th>
         <th>Blue</th>
         <th>Effect</th>
+        <th>Bulb</th>
     </tr>
     </thead>
     <tbody id="result">
@@ -28,6 +29,7 @@
         <th>Green</th>
         <th>Blue</th>
         <th>Effect</th>
+        <th>Bulb</th>
     </tr>
     </thead>
     <tbody id="results">
@@ -45,6 +47,7 @@
     <tbody id="boardWithEffect">
     </tbody>
     </table>
+    <!-- Custom sizing -->
     <h2>Gradient</h2>
     <table>
     <tbody id="gradient2">
@@ -77,6 +80,41 @@
   const url = "https://rebeccaaa.tk/api/light";
   const get_url = url + "/random";
   const board_url = url + "/board";
+
+  function showBulb(eff, cell){
+    cell.style.backgroundColor = "rgb(" + eff.red + ", " + eff.green + ", " + eff.blue + ")";
+    if(eff.effect == "Crossed_out"){
+      cell.innerHTML = "SLASH SLASH SLASH";
+      cell.style.textDecoration = "line-through";
+    }
+    else if(eff.effect == "Italic"){
+      cell.innerHTML = "Italic";
+      cell.style.fontStyle = "italic";
+    }
+    else if(eff.effect == "Underline"){
+      cell.innerHTML = "Underline";
+      cell.style.textDecoration = "underline";
+    }
+    else if(eff.effect == "Bold"){
+      cell.innerHTML = "Bold";
+      cell.style.fontWeight = "bolder";
+    }
+    else if(eff.effect == "Faint"){
+      cell.innerHTML = "Faint";
+      cell.style.opacity = "0.3";
+    }
+    // else if(data[index].light.effect == "Conceal"){
+            //   boxEffect.innerHTML = "Conceal";
+            //   boxEffect.setAttribute("id", "conceal");
+            //   $(document).ready(function() {
+            //     $("conceal").hover(
+            //       function() {
+            //         $(this).css("background-color", "black");
+            //       }, 
+            //     );
+            //   });
+            // }
+  }
 
   // prepare fetch GET options
   const options = {
@@ -121,11 +159,15 @@ function getBulbInfo(){
         const effect = document.createElement("td");
         effect.innerHTML = data.effect;
 
+        var singleBulbCell = document.createElement("td");
+        showBulb(data, singleBulbCell);
+
         // this builds ALL td's (cells) into tr (row) element
         tr.appendChild(red);
         tr.appendChild(green);
         tr.appendChild(blue);
         tr.appendChild(effect);
+        tr.appendChild(singleBulbCell);
 
         // this adds all the tr (row) work above to the HTML "result" container
         if(document.getElementById("table").rows.length == 2){ // check if row exists
@@ -170,12 +212,15 @@ function addBulbInfo(){
         const effect = document.createElement("td");
         effect.innerHTML = data.effect;
 
+        var bulbCell = document.createElement("td");
+        showBulb(data, bulbCell);
 
         // this builds ALL td's (cells) into tr (row) element
         tr.appendChild(red);
         tr.appendChild(green);
         tr.appendChild(blue);
         tr.appendChild(effect);
+        tr.appendChild(bulbCell);
 
         // this adds all the tr (row) work above to the HTML "result" container
         resultContainer.appendChild(tr);
@@ -217,41 +262,9 @@ function addBulbInfo(){
           var trEffect = document.createElement("tr"); // columns of board
           for (let col = 0; col < 10; col++){
             var box = document.createElement("td");
-            var boxEffect = document.createElement("td");
+            boxEffect = document.createElement("td");
             box.style.backgroundColor = "rgb(" + data[index].light.red + ", " + data[index].light.green + ", " + data[index].light.blue + ")";
-            boxEffect.style.backgroundColor = "rgb(" + data[index].light.red + ", " + data[index].light.green + ", " + data[index].light.blue + ")";
-            // CSS for effects
-            if(data[index].light.effect == "Crossed_out"){
-              boxEffect.innerHTML = "SLASH SLASH SLASH";
-              boxEffect.style.textDecoration = "line-through";
-            }
-            else if(data[index].light.effect == "Italic"){
-              boxEffect.innerHTML = "Italic";
-              boxEffect.style.fontStyle = "italic";
-            }
-            else if(data[index].light.effect == "Underline"){
-              boxEffect.innerHTML = "Underline";
-              boxEffect.style.textDecoration = "underline";
-            }
-            else if(data[index].light.effect == "Bold"){
-              boxEffect.innerHTML = "Bold";
-              boxEffect.style.fontWeight = "bolder";
-            }
-            else if(data[index].light.effect == "Faint"){
-              boxEffect.innerHTML = "Faint";
-              boxEffect.style.opacity = "0.3";
-            }
-            // else if(data[index].light.effect == "Conceal"){
-            //   boxEffect.innerHTML = "Conceal";
-            //   boxEffect.setAttribute("id", "conceal");
-            //   $(document).ready(function() {
-            //     $("conceal").hover(
-            //       function() {
-            //         $(this).css("background-color", "black");
-            //       }, 
-            //     );
-            //   });
-            // }
+            showBulb(data[index].light, boxEffect);
             tr.appendChild(box);
             trEffect.appendChild(boxEffect);
             index++; // iterating through list of JSON
