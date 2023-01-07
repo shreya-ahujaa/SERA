@@ -10,7 +10,7 @@ function dayOfWeek() {
 
 
   // fetch the API
-  fetch(str_url, options)
+  fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
