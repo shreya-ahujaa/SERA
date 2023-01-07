@@ -3,7 +3,7 @@
 <!-- HTML must be above JS to create result body before JS access -->
 <body>
     <h2>Single Light Bulb Info</h2>
-    <table>
+    <table id="table">
     <thead>
     <tr>
         <th>Red</th>
@@ -44,25 +44,31 @@
     </table>
     <h2>Gradient</h2>
     <table>
-    <tbody id="gradient">
-    </tbody>
-    </table>
-    <button id="gradBut" onclick="setGradient()">Create blue gradient!</button>
-    <table>
     <tbody id="gradient2">
     </tbody>
     </table>
-    <button id="gradBut2" onclick="setGradient2()">Create red gradient!</button>
+    <button onclick="setGradient2()">Create red gradient!</button>
+    <table>
+    <tbody id="gradient3">
+    </tbody>
+    </table>
+    <button onclick="setGradient3()">Create green gradient!</button>
+    <table>
+    <tbody id="gradient">
+    </tbody>
+    </table>
+    <button onclick="setGradient()">Create blue gradient!</button>
 </body>
 
 <script>
   // prepare HTML defined containers for new outputs in table
   const resultContainer = document.getElementById("results");
-  const bulbInfo = document.getElementById("result");
+  var bulbInfo = document.getElementById("result");
   const boardInfo = document.getElementById("board");
   const boardWithEffect = document.getElementById("boardWithEffect");
   const gradient = document.getElementById("gradient");
   const gradient2 = document.getElementById("gradient2");
+  const gradient3 = document.getElementById("gradient3");
 
   // prepare fetch urls
   const url = "https://rebeccaaa.tk/api/light";
@@ -118,6 +124,9 @@ function getBulbInfo(){
         tr.appendChild(effect);
 
         // this adds all the tr (row) work above to the HTML "result" container
+        if(document.getElementById("table").rows.length == 2){ // check if row exists
+          document.getElementById("table").deleteRow(1);
+        }
         bulbInfo.appendChild(tr);
       })
   })
@@ -238,6 +247,23 @@ function addBulbInfo(){
     error(err + " " + get_url);
   });
 
+  function setGradient2(){
+    var r = 253;
+    var g = 29;
+    var b = 29;
+    for (let row = 0; row < 10; row++){
+        var line = document.createElement("tr");
+        for (let col = 0; col < 10; col++){
+            var cell = document.createElement("td");
+            cell.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+            line.appendChild(cell);
+        }    
+        g+=20;
+        b-=10;
+        gradient2.appendChild(line);
+    }
+  }
+
   function setGradient(){
     var r = 0;
     var g = 0;
@@ -255,10 +281,10 @@ function addBulbInfo(){
     }
   }
 
-  function setGradient2(){
-    var r = 253;
-    var g = 29;
-    var b = 29;
+  function setGradient3(){
+    var r = 130;
+    var g = 255;
+    var b = 127;
     for (let row = 0; row < 10; row++){
         var line = document.createElement("tr");
         for (let col = 0; col < 10; col++){
@@ -266,9 +292,10 @@ function addBulbInfo(){
             cell.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
             line.appendChild(cell);
         }    
-        g+=20;
+        r-=10;
+        g-=20;
         b-=10;
-        gradient2.appendChild(line);
+        gradient3.appendChild(line);
     }
   }
 </script>
