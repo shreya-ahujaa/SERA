@@ -2,6 +2,46 @@
 
 
 <script>
+function firstDayOfYear(){
+    var year_firstday = document.getElementById("year_firsday").value;
+    var str_url_year_firsday = "https://csa.rebeccaaa.tk/api/calendar/firstDayOfYear/" + year_firsday;
+    console.log(str_url_year_firsday)
+
+     fetch(str_url_year_firsday)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+          console.log(data.firstDayOfYear);
+          document.getElementById("firstDayOfYear").innerHTML = data.firstDayOfYear;
+                    if (data.dayOfWeek == 0) {
+            document.getElementById("sunday_year_firsday").innerHTML = "it is a sunday!";
+          } else if (data.dayOfWeek == 1) {
+            document.getElementById("monday_year_firsday").innerHTML = "it is a monday!";
+          } else if (data.dayOfWeek == 2) {
+            document.getElementById("tuesday_year_firsday").innerHTML = "it is a tuesday!";
+          }else if (data.dayOfWeek == 3) {
+            document.getElementById("wednesday_year_firsday").innerHTML = "it is a wednesday!";
+          }else if (data.dayOfWeek == 4) {
+            document.getElementById("thursday_year_firsday").innerHTML = "it is a thursday!";
+          }else if (data.dayOfWeek == 5) {
+            document.getElementById("friday_year_firsday").innerHTML = "it is a friday!";
+          }else if (data.dayOfWeek == 6) {
+            document.getElementById("saturday_year_firsday").innerHTML = "it is a saturday!";
+          }else {
+            console.log("something went wrong, no day?");
+          }
+      })
+  })
+}
+
+
 function numberOfLeapYears(){
     var year1 = document.getElementById("year1").value;
     var year2 = document.getElementById("year2").value;
@@ -90,20 +130,39 @@ function dayOfWeek() {
 }
 
 </script>
+
+<br>
+<h2>What day is the first day of the given year?</h2>
+<label for="year_firsday">Year:</label>
+<input type="text" id="year_firsday" name="year_firsday" placeholder="yyyy">
+<br>
+<button onclick="firstDayOfYear()">Go!</button>
+<br>
+<h3 id="firstDayOfYear"></h3>
+<h3 id="sunday_year_firsday"></h3>
+<h3 id="monday_year_firsday"></h3>
+<h3 id="tuesday_year_firsday"></h3>
+<h3 id="wednesday_year_firsday"></h3>
+<h3 id="thursday_year_firsday"></h3>
+<h3 id="friday_year_firsday"></h3>
+<h3 id="saturday_year_firsday"></h3>
+<br>
+<br>
+
 <h2>How many leap years are there between two given years?</h2>
 <label for="year1">Year 1:</label>
 <input type="text" id="year1" name="year1" placeholder="yyyy">
 
 <label for="year2">Year 2:</label>
 <input type="text" id="year2" name="year2" placeholder="yyyy">
-<button onclick="numberOfLeapYears()">Try it</button>
+<button onclick="numberOfLeapYears()">Go!</button>
 <br>
-<h2 id="numberOfLeapYears"></h2>
+<h3 id="numberOfLeapYears"></h3>
 <br>
 <br>
 
 
-<h2>What day of the week is it?</h2>
+<h2>What day of the week is it given a date?</h2>
 <label for="month">Month:</label>
 <input type="text" id="month" name="month" placeholder="mm">
 
@@ -114,7 +173,7 @@ function dayOfWeek() {
 <input type="text" id="year" name="year" placeholder="yyyy">
 <br>
 
-<button onclick="dayOfWeek()">Try it</button>
+<button onclick="dayOfWeek()">Go!</button>
 
 <br>
 <h3 id="dayofWeek_number"></h3>
