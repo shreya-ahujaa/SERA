@@ -3,11 +3,11 @@
 
 <script>
 function firstDayOfYear(){
-    var year_firstday = document.getElementById("year_firsday").value;
-    var str_url_year_firsday = "https://csa.rebeccaaa.tk/api/calendar/firstDayOfYear/" + year_firsday;
-    console.log(str_url_year_firsday)
+    var year_firstday = document.getElementById("year_firstday").value;
+    var str_url_year_firstday = "https://csa.rebeccaaa.tk/api/calendar/firstDayOfYear/" + year_firstday;
+    console.log(str_url_year_firstday)
 
-     fetch(str_url_year_firsday)
+     fetch(str_url_year_firstday)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -21,19 +21,19 @@ function firstDayOfYear(){
           console.log(data.firstDayOfYear);
           document.getElementById("firstDayOfYear").innerHTML = data.firstDayOfYear;
                     if (data.dayOfWeek == 0) {
-            document.getElementById("sunday_year_firsday").innerHTML = "it is a sunday!";
+            document.getElementById("sunday_year_firstday").innerHTML = "it is a sunday!";
           } else if (data.dayOfWeek == 1) {
-            document.getElementById("monday_year_firsday").innerHTML = "it is a monday!";
+            document.getElementById("monday_year_firstday").innerHTML = "it is a monday!";
           } else if (data.dayOfWeek == 2) {
-            document.getElementById("tuesday_year_firsday").innerHTML = "it is a tuesday!";
+            document.getElementById("tuesday_year_firstday").innerHTML = "it is a tuesday!";
           }else if (data.dayOfWeek == 3) {
-            document.getElementById("wednesday_year_firsday").innerHTML = "it is a wednesday!";
+            document.getElementById("wednesday_year_firstday").innerHTML = "it is a wednesday!";
           }else if (data.dayOfWeek == 4) {
-            document.getElementById("thursday_year_firsday").innerHTML = "it is a thursday!";
+            document.getElementById("thursday_year_firstday").innerHTML = "it is a thursday!";
           }else if (data.dayOfWeek == 5) {
-            document.getElementById("friday_year_firsday").innerHTML = "it is a friday!";
+            document.getElementById("friday_year_firstday").innerHTML = "it is a friday!";
           }else if (data.dayOfWeek == 6) {
-            document.getElementById("saturday_year_firsday").innerHTML = "it is a saturday!";
+            document.getElementById("saturday_year_firstday").innerHTML = "it is a saturday!";
           }else {
             console.log("something went wrong, no day?");
           }
@@ -133,19 +133,19 @@ function dayOfWeek() {
 
 <br>
 <h2>What day is the first day of the given year?</h2>
-<label for="year_firsday">Year:</label>
-<input type="text" id="year_firsday" name="year_firsday" placeholder="yyyy">
+<label for="year_firstday">Year:</label>
+<input type="text" id="year_firstday" name="year_firstday" placeholder="yyyy">
 <br>
 <button onclick="firstDayOfYear()">Go!</button>
 <br>
 <h3 id="firstDayOfYear"></h3>
-<h3 id="sunday_year_firsday"></h3>
-<h3 id="monday_year_firsday"></h3>
-<h3 id="tuesday_year_firsday"></h3>
-<h3 id="wednesday_year_firsday"></h3>
-<h3 id="thursday_year_firsday"></h3>
-<h3 id="friday_year_firsday"></h3>
-<h3 id="saturday_year_firsday"></h3>
+<h3 id="sunday_year_firstday"></h3>
+<h3 id="monday_year_firstday"></h3>
+<h3 id="tuesday_year_firstday"></h3>
+<h3 id="wednesday_year_firstday"></h3>
+<h3 id="thursday_year_firstday"></h3>
+<h3 id="friday_year_firstday"></h3>
+<h3 id="saturday_year_firstday"></h3>
 <br>
 <br>
 
