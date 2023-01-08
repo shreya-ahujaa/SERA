@@ -48,6 +48,24 @@
     </tbody>
     </table>
     <!-- Custom sizing -->
+    <h2>Custom Size Light Board (Effects: Crossed Out, Italic, Underline, Bold, Faint)</h2>
+    <h3>How many rows should the board have?</h3>
+    <input type="number" id="rowBoard">
+    <h3>How many columns should the board have?</h3>
+    <input type="number" id="columnBoard">
+    <button onclick="customEffectBoard()">Generate board!</button>
+    <table id="cbe">
+    <tbody id="customBoardWithEffect">
+    </tbody>
+    </table>
+    <h2>Checkerboard</h2>
+    <h3>How many rows and columns should the checkerboard have?</h3>
+    <input type="number" id="cb_rows">
+    <button onclick="checkerBoard()">Generate checkerboard!</button>
+    <table id="cb">
+    <tbody id="checkerboard">
+    </tbody>
+    </table>
     <h2>Gradient</h2>
     <table>
     <tbody id="gradient2">
@@ -72,6 +90,8 @@
   var bulbInfo = document.getElementById("result");
   const boardInfo = document.getElementById("board");
   const boardWithEffect = document.getElementById("boardWithEffect");
+  const customBoardWithEffect = document.getElementById("customBoardWithEffect");
+  const checkerboard = document.getElementById("checkerboard");
   const gradient = document.getElementById("gradient");
   const gradient2 = document.getElementById("gradient2");
   const gradient3 = document.getElementById("gradient3");
@@ -120,9 +140,9 @@
   // prepare fetch GET options
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
+    // mode: 'cors', // no-cors, *cors, same-origin
     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, same-origin, omit
+    // credentials: 'same-origin', // include, same-origin, omit
     headers: {
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -279,6 +299,85 @@ function addBulbInfo(){
   .catch(err => {
     error(err + " " + get_url);
   });
+
+  function customEffectBoard(){
+    if(document.getElementById("cbe").rows.length > 0){ // check if row exists
+      $("#cbe tr").remove(); 
+    }
+    // get user-inputted rows and columns for random lightboard
+    var rows = document.getElementById("rowBoard").value;
+    var columns = document.getElementById("columnBoard").value;
+    var custom_url = "https://csa.rebeccaaa.tk/api/light/custom/board/" + rows + "/" + columns;
+    console.log(custom_url);
+    // fetch the API for multiple lights (light board)
+    fetch(custom_url, options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            error('GET API response failure: ' + response.status);
+            return;
+        }
+        // valid response will have JSON data
+        response.json().then(data => {
+          console.log(data);
+          var idx = 0;
+          for (let row = 0; row < rows; row++){ // rows of board
+            var trCustomEffect = document.createElement("tr");
+            for (let col = 0; col < columns; col++){  // columns of board
+              boxEffect = document.createElement("td");
+              showBulb(data[idx].light, boxEffect);
+              trCustomEffect.appendChild(boxEffect);
+              idx++; // iterating through list of JSON
+            }
+            customBoardWithEffect.appendChild(trCustomEffect);
+          }
+          })
+        })  
+    // catch fetch errors (ie Nginx ACCESS to server blocked)
+    .catch(err => {
+      error(err + " " + get_url);
+    });
+  }
+
+  function checkerBoard(){
+    if(document.getElementById("cb").rows.length > 0){ // check if row exists
+      $("#cb tr").remove(); 
+    }
+    // for checkerboard
+    var cb_rows = document.getElementById("cb_rows").value;
+    var cb_url = "https://csa.rebeccaaa.tk/api/light/checkerboard/" + cb_rows;
+    console.log(cb_url);
+    // fetch the API for multiple lights (light board)
+    fetch(cb_url, options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            error('GET API response failure: ' + response.status);
+            return;
+        }
+        // valid response will have JSON data
+        response.json().then(data => {
+          console.log(data);
+          var idx = 0;
+          for (let row = 0; row < cb_rows; row++){ // rows of board
+            var trCustomEffect = document.createElement("tr");
+            for (let col = 0; col < cb_rows; col++){  // columns of board
+              boxEffect = document.createElement("td");
+              showBulb(data[idx].light, boxEffect);
+              trCustomEffect.appendChild(boxEffect);
+              idx++; // iterating through list of JSON
+            }
+            checkerboard.appendChild(trCustomEffect);
+          }
+          })
+        })  
+    // catch fetch errors (ie Nginx ACCESS to server blocked)
+    .catch(err => {
+      error(err + " " + get_url);
+    });
+  }
 
   function setGradient2(){
     var r = 253;
