@@ -20,7 +20,8 @@ function calculate(){
     // valid response will have JSON data
     response.json().then(data => {
         console.log(data);
-        document.getElementById("calculated_result").innerHTML = data;
+        console.log(data.result);
+        document.getElementById("calculated_result").innerHTML = "Result: " + data.result;
     })
 })
 

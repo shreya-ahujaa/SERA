@@ -10,7 +10,19 @@ function dailySteps(){
     var str_url_dailySteps = "https://csa.rebeccaaa.tk/api/step/dailySteps/" + total_steps;
     console.log(str_url_dailySteps)
 
-     fetch(str_url_dailySteps)
+    // prepare fetch GET options
+        const options = {
+         method: 'GET', // *GET, POST, PUT, DELETE, etc.
+         // mode: 'cors', // no-cors, *cors, same-origin
+         cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            // credentials: 'same-origin', // include, same-origin, omit
+           headers: {
+             'Content-Type': 'application/json'
+             // 'Content-Type': 'application/x-www-form-urlencoded',
+         },
+    };
+
+     fetch(str_url_dailySteps,options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -20,8 +32,10 @@ function dailySteps(){
         }
       // valid response will have JSON data
       response.json().then(data => {
-          console.log(data.dailySteps);
+          console.log(data);
+          console.log(data.dailySteps)
           document.getElementById("dailySteps_result").innerHTML = "enough? " +  data.dailySteps;
+;
         })
     }) 
 }
