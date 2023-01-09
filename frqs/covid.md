@@ -16,8 +16,8 @@ function country(){
         response.json().then(data => {
             console.log(data);
             for (const row of data.countries_stat) {
-                if (country_name = data.country_name){
-                    document.getElementById("cases").innerHTML = data.cases;
+                if (country_name = data.countries_stat.country_name){
+                    document.getElementById("cases").innerHTML = data.countries_stat.cases;
                 }
         
             }
