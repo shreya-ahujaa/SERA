@@ -15,7 +15,7 @@ function country(){
         // valid response will have JSON data
         response.json().then(data => {
             console.log(data);
-            for (const row of data) {
+            for (const row of data.countries_stat) {
                 if (country_name = data.country_name){
                     document.getElementById("cases").innerHTML = data.cases;
                 }
