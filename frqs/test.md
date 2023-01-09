@@ -8,7 +8,7 @@
 function isLeapYear(){
     var year_leap = document.getElementById("year_leap").value;
 
-    var str_url_isLeapYear = "hhttp://localhost:8192/api/calendar/isLeapYear/" + year_leap;
+    var str_url_isLeapYear = "http://localhost:8192/api/calendar/isLeapYear/" + year_leap;
     console.log(str_url_isLeapYear)
 
      fetch(str_url_isLeapYear)
