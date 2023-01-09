@@ -97,7 +97,7 @@
   const gradient3 = document.getElementById("gradient3");
 
   // prepare fetch urls
-  const url = "https://rebeccaaa.tk/api/light";
+  const url = "https://csa.rebeccaaa.tk/api/light";
   const get_url = url + "/random";
   const board_url = url + "/board";
 

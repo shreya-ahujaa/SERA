@@ -15,7 +15,7 @@
 </body>
 
 <script>
-    const url = "https://rebeccaaa.tk/api/sentences/calculate";
+    const url = "https://csa.rebeccaaa.tk/api/sentences/calculate";
     function calculate(){
         var text = document.getElementById('input1').value;
         const options = {

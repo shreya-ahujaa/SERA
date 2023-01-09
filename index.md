@@ -6,3 +6,5 @@
 | Ellie Rozenkrants | Frontend Developer | 
 | Rebecca Su | DevOps Manager |
 | Shreya Ahuja | Scrum Master |
+
+<p><img src="manifesto.png"><p>
