@@ -35,7 +35,6 @@ function dailySteps(){
           console.log(data);
           console.log(data.dailySteps)
           document.getElementById("dailySteps_result").innerHTML = "enough? " +  data.dailySteps;
-;
         })
     }) 
 }
@@ -43,7 +42,7 @@ function dailySteps(){
 </script>
 
 <br>
-<h2>Enough daily steps?</h2>
+<h2>Enough daily steps</h2>
 <label for="total_steps">Steps:</label>
 <input type="text" id="total_steps" name="total_steps" placeholder="####">
 <br>
