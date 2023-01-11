@@ -1,7 +1,11 @@
-- generating the best dog for you, based on questions for the user. 
+# Ideation
+
+- Generating the best dog for you, based on questions for the user
+   - 
 - given a dog name, generting random facts about the dog. 
 - instead of generating random facts, we can also do specific information
     - for example if the user enters the dog breed, and asks for the avg life span of the dog, it would return that value
-- gallery, where users can upload pictures of dogs, and the images ould be added to a database
-- given an address, it would generate the closest dog center or parks
-- dog jokes
+- Gallery of dog owners' dogs
+- Generating the closest dog center or parks based on a location
+- Dog jokes
+  - Database
