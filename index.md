@@ -1,5 +1,8 @@
 # Team SERA
 
+<p><img src="manifesto.png"><p>
+
+  
 | Name | Role |
 | ---- | ----- |
 | Aadya Daita | Backend Developer |
@@ -7,4 +10,3 @@
 | Rebecca Su | DevOps Manager |
 | Shreya Ahuja | Scrum Master |
 
-<p><img src="manifesto.png"><p>
