@@ -34,9 +34,14 @@ function dailySteps(){
       response.json().then(data => {
           console.log(data);
           console.log(data.dailySteps);
+          var checkEnough = data.dailySteps;
           document.getElementById("dailySteps_result").innerHTML = "enough? " +  data.dailySteps;
         })
     }) 
+}
+
+function test() {
+    window.print(checkEnough);
 }
 
 </script>
@@ -51,3 +56,4 @@ function dailySteps(){
 <h3 id="dailySteps_result"></h3>
 <br>
 <br>
+<button onclick="test()">test</button>
