@@ -34,7 +34,7 @@ function dailySteps(){
       response.json().then(data => {
           console.log(data);
           console.log(data.dailySteps)
-          document.getElementById("dailySteps_result").innerHTML = "enough? " +  data.dailySteps;
+          document.getElementById("dailySteps_result").innerHTML = "enough? " +  data;
         })
     }) 
 }
