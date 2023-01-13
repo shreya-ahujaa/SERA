@@ -33,8 +33,8 @@ function dailySteps(){
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
-          console.log(data.dailySteps)
-          document.getElementById("dailySteps_result").innerHTML = "enough? " +  data;
+          console.log(data.dailySteps);
+          document.getElementById("dailySteps_result").innerHTML = "enough? " +  data.dailySteps;
         })
     }) 
 }
