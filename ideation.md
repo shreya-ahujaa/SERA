@@ -1,19 +1,5 @@
 # Ideation
 ## Club Database
-### Purpose
-- Create a management system for ASB club executives
-- Provide students with a consolidated, accurate and up-to-date list of clubs on campus
-
-| Areas of Improvement for Current System of Creating, Joining, and Running a DNHS Club | Solutions |
-|--------------------------------------------------------------------------------------|------------------|
-| **For Club Leadership** | |
-| Binder checks, monthly activity forms | Club meeting minute database (Admin can access any club's)|
-| **For Prospective Club Members** | |
-| Club spreadsheet is inaccurate and often outdated | Allow club leadership to update information about their club |
-
-### Audience
-- DNHS clubs and students
-
 ### Features
 1. Accounts
   - Admin (ASB club executives)
