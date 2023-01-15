@@ -1,6 +1,6 @@
 # Meeting Minutes Database Frontend Guide
 
- <form action="/action_page.php">
+ <form>
         <label for="date">Date</label>
         <input type="text" id="date" placeholder="MM/DD/YYYY"/>
         <br>
