@@ -12,6 +12,17 @@
         <input type="file" id="myFile" name="filename">
         <br>
         <br>
-        <input type="submit">
+        <button onclick="minutes()">Submit</button>
 
 </form>
+
+<h3 id="submitted"></h3>
+
+
+<script>
+
+    function minutes(){
+        document.getElementById("submitted").innerHTML = "Input Submitted Successfully!";
+    }
+
+</script>
