@@ -6,7 +6,6 @@
 <br>
 <label for="person_who_logged">Name of the Person Logging in</label>
 <input type="person_who_logged" id="person_who_logged" placeholder="aadya"/>
-<br>   
 <br>    
 <input type="file" id="myFile" name="filename">
 <br>
