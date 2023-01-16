@@ -17,6 +17,8 @@
     <th>Club President/Point of Contact</th>
     <th>Staff Advisor</th>
     <th>Official Club?</th>
+    <th>Reviews</th>
+    <th>Meeting Minutes</th>
     <th></th>
     <th></th>
   </tr>
@@ -29,6 +31,8 @@
     <td>Jane Doe</td>
     <td>Mr. Swanson</td>
     <td>Yes</td>
+    <td></td>
+    <td></td>
     <td class="role">Update</td>
     <td class="role">Delete</td>
   </tr>
@@ -41,11 +45,15 @@
     <td>John Smith</td>
     <td>Mr. Mortensen</td>
     <td>Yes</td>
+    <td></td>
+    <td></td>
     <td class="role">Update</td>
     <td class="role">Delete</td>
   </tr>
   <tr>
     <td>Club 3</td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>
@@ -65,11 +73,15 @@
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
     <td class="role">Update</td>
     <td class="role">Delete</td>
   </tr>
   <tr>
     <td>Club 5</td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>
