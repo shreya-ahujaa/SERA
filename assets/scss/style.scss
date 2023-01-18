@@ -1,0 +1,50 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Libre+Baskerville&display=swap');
+// bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+);
+
+/* "row style" is flexible size and aligns pictures in center */
+.row {
+    align-items: center;
+    display: flex;
+  }
+  
+  /* "column style" is one-third of the width with padding */
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+.navbar {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .2em;
+}
+
+h1, h2, h3 {
+  font-family: 'Libre Baskerville', serif;
+}

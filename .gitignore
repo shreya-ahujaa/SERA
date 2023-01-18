@@ -1,2 +1,10 @@
 Gemfile.lock
 _site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+node_modules
+/node_modules/.package-lock.json
+/static/scss/custom.css.map
+/package.json
+/package-lock.json
