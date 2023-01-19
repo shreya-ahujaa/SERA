@@ -24,8 +24,11 @@
                     <tr><th><label for="password">PASSWORD</label></th></tr>
                     <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
                 </table>
-                <button class="btn btn-custom text-nowrap text-light mt-3 m-5" type="submit">Log In</button>
+                <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit">Log In</button>
             </form>
+            <div class="text-light mx-5 mb-5">
+                <p>Creating a new club? <a href="{{ site.baseurl }}/signup">Sign Up</a></p>
+            </div>
         </div>
     </body>
 </html>
