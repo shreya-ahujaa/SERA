@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter&family=Libre+Baskerville&display=swap");
 /* "row style" is flexible size and aligns pictures in center */
 .row {
   align-items: center;
@@ -14,6 +14,11 @@
 .navbar {
   font-family: "Inter", sans-serif;
   letter-spacing: 0.2em;
+}
+
+.table {
+  font-family: "Fira Sans", sans-serif;
+  letter-spacing: 0.05em;
 }
 
 h1, h2, h3 {

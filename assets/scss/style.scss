@@ -1,5 +1,5 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter&family=Libre+Baskerville&display=swap');
 // bootstrap
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -43,6 +43,11 @@ $spacers: (
 .navbar {
   font-family: 'Inter', sans-serif;
   letter-spacing: .2em;
+}
+
+.table {
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: .05em;
 }
 
 h1, h2, h3 {
