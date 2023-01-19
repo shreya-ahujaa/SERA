@@ -1,5 +1,17 @@
 <html>
     <head>
+        <style>
+            .btn-custom {
+                color: #fff;
+                background-color: #198754;
+                border-color: #ffffff;
+            }
+            .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active, .open>.dropdown-toggle.btn-custom {
+                color: #fff;
+                background-color: #157347;
+                border-color: #ffffff;
+            }
+        </style>
     </head>
     <body>
         <div class="bg-success w-50 mx-auto m-5">
@@ -12,7 +24,7 @@
                     <tr><th><label for="password">PASSWORD</label></th></tr>
                     <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
                 </table>
-                <button class="btn btn-outline-light text-nowrap text-light mt-3 m-5" type="submit">Log In</button>
+                <button class="btn btn-custom text-nowrap text-light mt-3 m-5" type="submit">Log In</button>
             </form>
         </div>
     </body>
