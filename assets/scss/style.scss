@@ -40,9 +40,20 @@ $spacers: (
     padding: 5px;
   }
 
-.navbar {
+.navbar{
   font-family: 'Inter', sans-serif;
   letter-spacing: .2em;
+}
+
+label {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  letter-spacing: .05em;
+}
+
+input {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .1em;
 }
 
 .table {

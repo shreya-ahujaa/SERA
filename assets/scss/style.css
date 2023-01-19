@@ -16,6 +16,17 @@
   letter-spacing: 0.2em;
 }
 
+label {
+  font-family: "Inter", sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+input {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.1em;
+}
+
 .table {
   font-family: "Fira Sans", sans-serif;
   letter-spacing: 0.05em;
