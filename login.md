@@ -26,9 +26,9 @@
                 </table>
                 <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit">Log In</button>
             </form>
-            <div class="text-light mx-5 mb-5">
+            <!-- <div class="text-light mx-5 mb-5">
                 <p>Creating a new club? <a href="{{ site.baseurl }}/signup">Sign Up</a></p>
-            </div>
+            </div> -->
         </div>
     </body>
 </html>
