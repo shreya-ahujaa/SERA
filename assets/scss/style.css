@@ -27,6 +27,10 @@ input {
   letter-spacing: 0.1em;
 }
 
+.login {
+  font-family: "Inter", sans-serif;
+}
+
 .table {
   font-family: "Fira Sans", sans-serif;
   letter-spacing: 0.05em;
