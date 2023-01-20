@@ -18,7 +18,7 @@
                         <th scope="col">Club Type</th>
                         <th scope="col">Email</th>
                         <th scope="col">Meeting Time</th>
-                        <th scope="col">Club President or Point of Contact</th>
+                        <th scope="col">Club President</th>
                         <th scope="col">Staff Advisor</th>
                         <th scope="col">Official Club?</th>
                         <th scope="col">Reviews</th>
