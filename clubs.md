@@ -15,14 +15,17 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Purpose</th>
-                        <th scope="col">Club Type</th>
+                        <th scope="col">Club Type(s)</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Meeting Time</th>
+                        <th scope="col">Meeting Time and Location</th>
                         <th scope="col">Club President</th>
                         <th scope="col">Staff Advisor</th>
                         <th scope="col">Official Club?</th>
+                        <th scope="col">Additional Info</th>
+                        <!-- Links -->
                         <th scope="col">Reviews</th>
                         <th scope="col">Meeting Minutes</th>
+                        <!-- Update and delete -->
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
@@ -40,6 +43,7 @@
                         <td>Y</td>
                         <td></td>
                         <td></td>
+                        <td></td>
                         <td class="role">Update</td>
                         <td class="role">Delete</td>
                     </tr>
@@ -47,12 +51,13 @@
                         <th scope="row">1</th>
                         <td>Girls in Computer Science</td>
                         <td>To spark girls' interest in CS and create an inclusive environment to encourage exploration of computing</td>
-                        <td>STEM</td>
+                        <td>STEM, Service</td>
                         <td>dngirlsincs@gmail.com</td>
-                        <td>Wednesdays at lunch</td>
+                        <td>Wednesdays at lunch in A101</td>
                         <td>John Smith</td>
                         <td>Mr. Mortensen</td>
                         <td>Y</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td class="role">Update</td>
