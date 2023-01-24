@@ -43,9 +43,9 @@
                         <td>Y</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td class="role">Update</td>
-                        <td class="role">Delete</td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Documents </a></td>
+                        <td class="role"> Update </td>
+                        <td class="role"> Delete </td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -59,9 +59,9 @@
                         <td>Y</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td class="role">Update</td>
-                        <td class="role">Delete</td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Documents </a></td>
+                        <td class="role"> Update </td>
+                        <td class="role"> Delete </td>
                     </tr>
                 </tbody>
             </table>
