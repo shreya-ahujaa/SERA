@@ -44,8 +44,8 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td class="role">Update</td>
-                        <td class="role">Delete</td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Update </a></td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Delete </a></td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -60,8 +60,8 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td class="role">Update</td>
-                        <td class="role">Delete</td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Update </a></td>
+                        <td class="role"> <a href="{{ site.baseurl }}/documents"> Delete </a></td>
                     </tr>
                 </tbody>
             </table>
