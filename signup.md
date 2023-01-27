@@ -23,6 +23,8 @@
                     <tr><td><input type="email" id="username" name="username" size="20" required></td></tr>
                     <tr><th><label for="password">PASSWORD</label></th></tr>
                     <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
+                    <tr><th><label for="purpose">PURPOSE</label></th></tr>
+                    <tr><td><input type="text" id="purpose" name="purpose" size="100" required></td></tr>
                     <tr><th><label for="name">CLUB NAME</label></th></tr>
                     <tr><td><input type="text" id="name" name="name" size="20" required></td></tr>
                     <tr><th><label for="president">CLUB PRESIDENT</label></th></tr>
