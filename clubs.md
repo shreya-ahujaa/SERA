@@ -30,7 +30,7 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider">
+                <tbody class="table-group-divider" id="clubs">
                     <tr>
                         <th scope="row"></th>
                         <td></td>
@@ -50,5 +50,89 @@
                 </tbody>
             </table>
         </div>
+        <script>
+            // prepare fetch urls
+            const url = "https://rebeccaaa.tk/api/club";
+            const get_url = url + "/all";
+            const clubContainer = document.getElementById("clubs");
+            // prepare fetch GET options
+            const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+            // fetch the API
+            fetch(get_url, options)
+                // response is a RESTful "promise" on any successful fetch
+                .then(response => {
+                // check for response errors
+                if (response.status !== 200) {
+                    error('GET API response failure: ' + response.status);
+                    return;
+                }
+                // valid response will have JSON data
+                response.json().then(data => {
+                    for (const row of data) {
+                        console.log(row);
+                        // columns
+                        const tr = document.createElement("tr");
+                        const id = document.createElement("td");
+                        const name = document.createElement("td");
+                        const purpose = document.createElement("td");
+                        const types = document.createElement("td");
+                        const email = document.createElement("td");
+                        const president = document.createElement("td");
+                        const advisor = document.createElement("td");
+                        const meeting = document.createElement("td");
+                        const info = document.createElement("td");
+                        const official = document.createElement("td");
+                        // accessing JSON values
+                        id.innerHTML = row.id;
+                        name.innerHTML = row.name;
+                        purpose.innerHTML = row.purpose;
+                        types.innerHTML = row.types;
+                        email.innerHTML = row.email
+                        president.innerHTML = row.president;
+                        advisor.innerHTML = row.advisor;
+                        meeting.innerHTML = row.meeting;
+                        info.innerHTML = row.info;
+                        official.innerHTML = row.official;
+                        // add all columns to the row
+                        tr.appendChild(id);
+                        tr.appendChild(name);
+                        tr.appendChild(purpose);
+                        tr.appendChild(types);
+                        tr.appendChild(email);
+                        tr.appendChild(president);
+                        tr.appendChild(advisor);
+                        tr.appendChild(meeting);
+                        tr.appendChild(info);
+                        tr.appendChild(official);
+                        // add row to table
+                        clubContainer.appendChild(tr);
+                    }    
+                })
+            })
+            // catch fetch errors (ie Nginx ACCESS to server blocked)
+            .catch(err => {
+                error(err + " " + get_url);
+            });
+            // Something went wrong with actions or responses
+            function error(err) {
+                // log as Error in console
+                console.error(err);
+                // append error to resultContainer
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = err;
+                tr.appendChild(td);
+                clubContainer.appendChild(tr);
+            }
+        </script>
     </body>
 </html>

@@ -36,7 +36,7 @@
                     <tr><th><label for="meeting">MEETING TIME AND LOCATION</label></th></tr>
                     <tr><td><input type="text" id="meeting" name="meeting" size="20" required></td></tr>
                     <tr><th><label for="info">ADDITIONAL INFO</label></th></tr>
-                    <tr><td><input type="text" id="info" name="info" size="20" required></td></tr>
+                    <tr><td><input type="text" id="info" name="info" size="20"></td></tr>
                 </table>
                 <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit">Sign Up</button>
             </form>
