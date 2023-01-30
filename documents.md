@@ -1,202 +1,133 @@
-# Notes
 <html>
-
-<head>
-
-<style>
-    $white: rgba(255,255,255,0.3);
-
-body {
-  background: linear-gradient(45deg, #FC466B, #3F5EFB);
-  height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.container {
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-}
-
-form {
-  background: $white;
-  padding: 3em;
-  height: 320px;
-  border-radius: 20px;
-  border-left: 1px solid $white;
-  border-top: 1px solid $white;
-  backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-  text-align: center;
-  position: relative;
-  transition: all 0.2s ease-in-out;
+    <head>
+        <style>
+            $ruler: 16px;
+            $color-red: #AE1100;
+            $color-bg: #EBECF0;
+            $color-shadow: #BABECC;
+            $color-white: #FFF;
+            body, html {
+            background-color:$color-bg;
+            }
+            body, p, input, select, textarea, button {
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: -0.2px;
+                font-size: $ruler;
+            }
+            div, p {
+            color: $color-shadow;
+            text-shadow: 1px 1px 1px $color-white;
+            }
+            form {
+            padding: $ruler;
+            width: $ruler*20;
+            margin: 0 auto;
+            }
+            .segment {
+            padding: $ruler*2 0;
+            text-align: center;
+            }
+            button, input {
+            border: 0;
+            outline: 0;
+            font-size: $ruler;
+            border-radius: $ruler*20;
+            padding: $ruler;
+            background-color:$color-bg;
+            text-shadow: 1px 1px 0 $color-white;
+            }
+            label {
+            display: block;
+            margin-bottom: $ruler*1.5;
+            width: 100%;
+            }
+            input {
+            margin-right: $ruler/2;
+            box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+            -webkit-appearance: none;
+            &:focus {
+                box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+            }
+            }
+            button {
+            color:#61677C;
+            font-weight: bold;
+            box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            font-weight: 600;
+            &:hover {
+                box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+            }
+            &:active {
+                box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+            }
+            .icon {
+                margin-right: $ruler/2;
+            }
+            &.unit {
+                border-radius: $ruler/2;
+                line-height: 0;
+                width: $ruler*3;
+                height: $ruler*3;
+                display:inline-flex;
+                justify-content: center;
+                align-items:center;
+                margin: 0 $ruler/2;
+                font-size: $ruler*1.2; 
+                .icon {
+                margin-right: 0; 
+                }
+            }
+            &.red {
+                display: block;
+                width: 100%;
+                color:$color-red;
+            }
+            }
+            .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            label {
+                margin: 0;
+                flex: 1;
+            }
+            }
+        </style>
+    </head>
+    <body>
+       <form>
   
-  p {
-    font-weight: 500;
-    color: #fff;
-    opacity: 0.7;
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 60px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  }
-  
-  a {
-    text-decoration: none;
-    color: #ddd;
-    font-size: 12px;
-    
-    &:hover {
-      text-shadow: 2px 2px 6px #00000040;
-    }
-    
-    &:active {
-      text-shadow: none;
-    }
-  }
-  
-  input {
-    background: transparent;
-    width: 200px;
-    padding: 1em;
-    margin-bottom: 2em;
-    border: none;
-    border-left: 1px solid $white;
-    border-top: 1px solid $white;
-    border-radius: 5000px;
-    backdrop-filter: blur(5px);
-    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
-    color: #fff;
-    font-family: Montserrat, sans-serif;
-    font-weight: 500;
-    transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    
-    &:hover {
-      background: rgba(255,255,255,0.1);
-      box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
-    }
-    
-    &[type="email"],
-    &[type="password"] {
-      
-      &:focus {
-        background: rgba(255,255,255,0.1);
-        box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
-      }
-    }
-    
-    &[type="button"] {
-      margin-top: 10px;
-      width: 150px;
-      font-size: 1rem;
-      
-      &:hover {
-        cursor: pointer;
-      }
-      
-      &:active {
-        background: rgba(255,255,255,0.2);
-      }
-    }
-  }
-  
-  &:hover {
-    margin: 4px;
-  }
-}
-
-::placeholder {
-  font-family: Montserrat, sans-serif;
-  font-weight: 400;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-}
-
-.drop {
-  background: $white;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border-left: 1px solid $white;
-  border-top: 1px solid $white;
-  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
-  position: absolute;
-  transition: all 0.2s ease;
-  
-  &-1 {
-    height: 80px;
-    width: 80px;
-    top: -20px;
-    left: -40px;
-    z-index: -1;
-  }
-  
-  &-2 {
-    height: 80px;
-    width: 80px;
-    bottom: -30px;
-    right: -10px;
-  }
-  
-  &-3 {
-    height: 100px;
-    width: 100px;
-    bottom: 120px;
-    right: -50px;
-    z-index: -1;
-  }
-  
-  &-4 {
-    height: 120px;
-    width: 120px;
-    top: -60px;
-    right: -60px;
-  }
-  
-  &-5 {
-    height: 60px;
-    width: 60px;
-    bottom: 170px;
-    left: 90px;
-    z-index: -1;
-  }
-}
-
-a,
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-</script>
-
-<script>
-    // No JavaScript, except...
-    alert("If you are not upset with the design, then it isn't a bad idea to color the grey heart pink.😁");
-    </script>
-</head>
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
-
-<div class="container">
-  <form >
-    <p>Welcome</p>
-    <input type="Date" placeholder="MM/DD/YYYY"><br>
-    <input type="Name" placeholder="Aadya Daita"><br>
-    <input type="button" value="Sign in"><br>
-  </form>
-
-  <div class="drops">
-    <div class="drop drop-1"></div>
-    <div class="drop drop-2"></div>
-    <div class="drop drop-3"></div>
-    <div class="drop drop-4"></div>
-    <div class="drop drop-5"></div>
+  <div class="segment">
+    <h1>Club Documents</h1>
   </div>
-</div>
-
-
+  
+  <label>
+    <input type="text" placeholder="Date"/>
+  </label>
+  <label>
+    <input type="password" placeholder="Password"/>
+  </label>
+  <button class="red" type="button"><i class="icon ion-md-lock"></i> Log in</button>
+  
+  <div class="segment">
+    <button class="unit" type="button"><i class="icon ion-md-arrow-back"></i></button>
+    <button class="unit" type="button"><i class="icon ion-md-bookmark"></i></button>
+    <button class="unit" type="button"><i class="icon ion-md-settings"></i></button>
+  </div>
+  
+  <div class="input-group">
+    <label>
+      <input type="text" placeholder="Email Address"/>
+    </label>
+    <button class="unit" type="button"><i class="icon ion-md-search"></i></button>
+  </div>
+  
+</form>
+    </body>
 </html>
