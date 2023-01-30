@@ -1,151 +1,202 @@
----
-title: Fetch Documents
-layout: default
+# Notes
+<html>
 
----
-<!-- HTML table fragment for page -->
-<table>
-  <thead>
-  <tr>
-    <th>Joke</th>
-    <th>HaHa</th>
-    <th>Boohoo</th>
-  </tr>
-  </thead>
-  <tbody id="result">
-    <!-- javascript generated data -->
-  </tbody>
-</table>
+<head>
 
-<!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
-<script>
+<style>
+    $white: rgba(255,255,255,0.3);
 
-  // prepare HTML defined "result" container for new output
-  const resultContainer = document.getElementById("result");
+body {
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
 
-  // keys for joke reactions
-  const HAHA = "haha";
-  const BOOHOO = "boohoo";
+.container {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
 
-  // prepare fetch urls
-  // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
-  const url = "https://spring.nighthawkcodingsociety.com/api/jokes";
-  const get_url = url +"/";
-  const like_url = url + "/like/";  // haha reaction
-  const jeer_url = url + "/jeer/";  // boohoo reaction
-
-  // prepare fetch GET options
-  const options = {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, same-origin, omit
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  };
-  // prepare fetch PUT options, clones with JS Spread Operator (...)
-  const put_options = {...options, method: 'PUT'}; // clones and replaces method
-
-  // fetch the API
-  fetch(get_url, options)
-    // response is a RESTful "promise" on any successful fetch
-    .then(response => {
-      // check for response errors
-      if (response.status !== 200) {
-          error('GET API response failure: ' + response.status);
-          return;
-      }
-      // valid response will have JSON data
-      response.json().then(data => {
-          console.log(data);
-          for (const row of data) {
-            // make "tr element" for each "row of data"
-            const tr = document.createElement("tr");
-            
-            // td for joke cell
-            const joke = document.createElement("td");
-              joke.innerHTML = row.id + ". " + row.joke;  // add fetched data to innerHTML
-
-            // td for haha cell with onclick actions
-            const haha = document.createElement("td");
-              const haha_but = document.createElement('button');
-              haha_but.id = HAHA+row.id   // establishes a HAHA JS id for cell
-              haha_but.innerHTML = row.haha;  // add fetched "haha count" to innerHTML
-              haha_but.onclick = function () {
-                // onclick function call with "like parameters"
-                reaction(HAHA, like_url+row.id, haha_but.id);  
-              };
-              haha.appendChild(haha_but);  // add "haha button" to haha cell
-
-            // td for boohoo cell with onclick actions
-            const boohoo = document.createElement("td");
-              const boohoo_but = document.createElement('button');
-              boohoo_but.id = BOOHOO+row.id  // establishes a BOOHOO JS id for cell
-              boohoo_but.innerHTML = row.boohoo;  // add fetched "boohoo count" to innerHTML
-              boohoo_but.onclick = function () {
-                // onclick function call with "jeer parameters"
-                reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
-              };
-              boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
-             
-            // this builds ALL td's (cells) into tr (row) element
-            tr.appendChild(joke);
-            tr.appendChild(haha);
-            tr.appendChild(boohoo);
-
-            // this adds all the tr (row) work above to the HTML "result" container
-            resultContainer.appendChild(tr);
-          }
-      })
-  })
-  // catch fetch errors (ie Nginx ACCESS to server blocked)
-  .catch(err => {
-    error(err + " " + get_url);
-  });
-
-  // Reaction function to likes or jeers user actions
-  function reaction(type, put_url, elemID) {
-
-    // fetch the API
-    fetch(put_url, put_options)
-    // response is a RESTful "promise" on any successful fetch
-    .then(response => {
-      // check for response errors
-      if (response.status !== 200) {
-          error("PUT API response failure: " + response.status)
-          return;  // api failure
-      }
-      // valid response will have JSON data
-      response.json().then(data => {
-          console.log(data);
-          // Likes or Jeers updated/incremented
-          if (type === HAHA) // like data element
-            document.getElementById(elemID).innerHTML = data.haha;  // fetched haha data assigned to haha Document Object Model (DOM)
-          else if (type === BOOHOO) // jeer data element
-            document.getElementById(elemID).innerHTML = data.boohoo;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
-          else
-            error("unknown type: " + type);  // should never occur
-      })
-    })
-    // catch fetch errors (ie Nginx ACCESS to server blocked)
-    .catch(err => {
-      error(err + " " + put_url);
-    });
+form {
+  background: $white;
+  padding: 3em;
+  height: 320px;
+  border-radius: 20px;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  
+  p {
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 12px;
     
+    &:hover {
+      text-shadow: 2px 2px 6px #00000040;
+    }
+    
+    &:active {
+      text-shadow: none;
+    }
   }
-
-  // Something went wrong with actions or responses
-  function error(err) {
-    // log as Error in console
-    console.error(err);
-    // append error to resultContainer
-    const tr = document.createElement("tr");
-    const td = document.createElement("td");
-    td.innerHTML = err;
-    tr.appendChild(td);
-    resultContainer.appendChild(tr);
+  
+  input {
+    background: transparent;
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid $white;
+    border-top: 1px solid $white;
+    border-radius: 5000px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    
+    &:hover {
+      background: rgba(255,255,255,0.1);
+      box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+    }
+    
+    &[type="email"],
+    &[type="password"] {
+      
+      &:focus {
+        background: rgba(255,255,255,0.1);
+        box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+      }
+    }
+    
+    &[type="button"] {
+      margin-top: 10px;
+      width: 150px;
+      font-size: 1rem;
+      
+      &:hover {
+        cursor: pointer;
+      }
+      
+      &:active {
+        background: rgba(255,255,255,0.2);
+      }
+    }
   }
+  
+  &:hover {
+    margin: 4px;
+  }
+}
 
+::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.drop {
+  background: $white;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+  
+  &-1 {
+    height: 80px;
+    width: 80px;
+    top: -20px;
+    left: -40px;
+    z-index: -1;
+  }
+  
+  &-2 {
+    height: 80px;
+    width: 80px;
+    bottom: -30px;
+    right: -10px;
+  }
+  
+  &-3 {
+    height: 100px;
+    width: 100px;
+    bottom: 120px;
+    right: -50px;
+    z-index: -1;
+  }
+  
+  &-4 {
+    height: 120px;
+    width: 120px;
+    top: -60px;
+    right: -60px;
+  }
+  
+  &-5 {
+    height: 60px;
+    width: 60px;
+    bottom: 170px;
+    left: 90px;
+    z-index: -1;
+  }
+}
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 </script>
+
+<script>
+    // No JavaScript, except...
+    alert("If you are not upset with the design, then it isn't a bad idea to color the grey heart pink.😁");
+    </script>
+</head>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+<div class="container">
+  <form >
+    <p>Welcome</p>
+    <input type="Date" placeholder="MM/DD/YYYY"><br>
+    <input type="Name" placeholder="Aadya Daita"><br>
+    <input type="button" value="Sign in"><br>
+  </form>
+
+  <div class="drops">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+  </div>
+</div>
+
+
+</html>
