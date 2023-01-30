@@ -109,17 +109,18 @@
   </div>
   
   <center>
-  <label>
-    <input type="text" placeholder="Date"/>
-  </label>
-  <br>
-  <label>
-    <input type="password" placeholder="Password"/>
-  </label>
-<br>
-  <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-
-<button class="red" type="button"><i class="icon ion-md-lock"></i> Submmit </button>
+    <label>
+        <input type="text" placeholder="Date"/>
+    </label>
+    <br>
+    <label>
+        <input type="password" placeholder="Password"/>
+    </label>
+    <br>
+    </center>
+    <center>
+    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+    <button class="red" type="button"><i class="icon ion-md-lock"></i> Submit </button>
   </center>
 
   <div class="segment">
