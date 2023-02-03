@@ -142,10 +142,9 @@
     </center>
     <center>
     <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-    <button class="red" type="button" onclick="isLeapYear()"><i class="icon ion-md-lock"></i> Submit </button>
-  </center>
-
-<h3 id="isLeapYear_result"></h3>
+      </center>
+    <button onclick="isLeapYear()">Go!</button> 
+    <h3 id="isLeapYear_result"></h3>
 
   <div class="input-group">
     <label>
