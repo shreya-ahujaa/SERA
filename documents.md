@@ -123,14 +123,11 @@
     </script>
     </head>
     <body>
-       <form>
   
   <div class="segment">
   <br>
     <h1>Club Documents</h1>
   </div>
-  
-  <center>
     <label>
         <input type="text" placeholder="Date"/>
     </label>
@@ -139,20 +136,16 @@
         <input type="password" placeholder="Password"/>
     </label>
     <br>
-    </center>
-    <center>
     <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-      </center>
     <button onclick="isLeapYear()">Go!</button> 
     <h3 id="isLeapYear_result"></h3>
 
+<br>
   <div class="input-group">
     <label>
       <input type="text" placeholder="Email Address"/>
     </label>
     <button class="unit" type="button"><i class="icon ion-md-search"></i></button>
   </div>
-  
-</form>
     </body>
 </html>
