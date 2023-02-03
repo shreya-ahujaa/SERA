@@ -1,14 +1,46 @@
-<html>
-    <body>
-    <br>
-    <h2>Is it a leap year?</h2>
-    <label for="year_leap">Year:</label>
-    <input type="text" id="year_leap" name="year_leap" placeholder="yyyy">
-    <br>
-    <button onclick="isLeapYear()">Go!</button> 
-    <br>
-    <h3 id="isLeapYear_result"></h3>
-    <br>
-    <br>
-    </body>
-</html>
+# 2019 FRQ 1: Calender
+
+
+<script>
+
+//is leap year code
+
+function isLeapYear(){
+    var year_leap = document.getElementById("year_leap").value;
+
+    var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_leap;
+    console.log(str_url_isLeapYear)
+
+     fetch(str_url_isLeapYear)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+          console.log(data.isLeapYear);
+          document.getElementById("isLeapYear_result").innerHTML = "leap year? " +  data.isLeapYear;
+      })
+  })
+
+}
+
+
+</script>
+
+<br>
+<h2>Is it a leap year?</h2>
+<label for="year_leap">Year:</label>
+<input type="text" id="year_leap" name="year_leap" placeholder="yyyy">
+<br>
+<button onclick="isLeapYear()">Go!</button> 
+<br>
+<h3 id="isLeapYear_result"></h3>
+<br>
+<br>
+
+
