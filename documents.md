@@ -142,14 +142,18 @@
     </center>
     <center>
     <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-    <button class="red" type="button" onclick="isLeapYear()"><i class="icon ion-md-lock"></i> Submit </button>
-    <h3 id="isLeapYear_result"></h3>
+    <button class="red" type="button" onclick="numberOfLeapYears()"><i class="icon ion-md-lock"></i> Submit </button>
   </center>
 
+<h3 id="numberOfLeapYears"></h3>
 
-
-
-
-
-</body>
+  <div class="input-group">
+    <label>
+      <input type="text" placeholder="Email Address"/>
+    </label>
+    <button class="unit" type="button"><i class="icon ion-md-search"></i></button>
+  </div>
+  
+</form>
+    </body>
 </html>
