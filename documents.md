@@ -99,6 +99,28 @@
             }
             }
         </style>
+    <script>
+        function isLeapYear(){
+    var year_leap = document.getElementById("year_leap").value;
+    var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_leap;
+    console.log(str_url_isLeapYear)
+     fetch(str_url_isLeapYear)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error('GET API response failure: ' + response.status);
+          return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+          console.log(data.isLeapYear);
+          document.getElementById("isLeapYear_result").innerHTML = "leap year? " +  data.isLeapYear;
+      })
+  })
+}
+    </script>
     </head>
     <body>
        <form>
@@ -120,22 +142,14 @@
     </center>
     <center>
     <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
-    <button class="red" type="button"><i class="icon ion-md-lock"></i> Submit </button>
+    <button class="red" type="button" onclick="isLeapYear()"><i class="icon ion-md-lock"></i> Submit </button>
+    <h3 id="isLeapYear_result"></h3>
   </center>
 
-  <div class="segment">
-    <button class="unit" type="button"><i class="icon ion-md-arrow-back"></i></button>
-    <button class="unit" type="button"><i class="icon ion-md-bookmark"></i></button>
-    <button class="unit" type="button"><i class="icon ion-md-settings"></i></button>
-  </div>
-  
-  <div class="input-group">
-    <label>
-      <input type="text" placeholder="Email Address"/>
-    </label>
-    <button class="unit" type="button"><i class="icon ion-md-search"></i></button>
-  </div>
-  
-</form>
-    </body>
+
+
+
+
+
+</body>
 </html>
