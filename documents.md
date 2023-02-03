@@ -29,15 +29,19 @@ function isLeapYear(){
 
 }
 
+
 </script>
 
 
-  <label for="fname">Date:</label><br>
-  <input type="text" id="fname" name="fname" value="MM/DD/YYYY"><br>
-  <label for="lname">Name:</label><br>
-  <input type="text" id="lname" name="lname" value="aadya daita"><br>
-  <br>
+<label for="date">Date:</label><br>
+<input type="text" id="date" name="date" value="MM/DD/YYYY"><br>
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name" value="aadya daita"><br><br>
 
+<br>
+<label for="year_leap">Year:</label>
+<input type="text" id="year_leap" name="year_leap" placeholder="yyyy">
+<br>
 <button onclick="isLeapYear()">Go!</button> 
 <br>
 <h3 id="isLeapYear_result"></h3>
