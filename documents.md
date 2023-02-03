@@ -1,4 +1,4 @@
-# 2019 FRQ 1: Calender
+# Meeting Documents Database
 
 
 <script>
@@ -29,14 +29,15 @@ function isLeapYear(){
 
 }
 
-
 </script>
 
-<br>
-<h2>Is it a leap year?</h2>
-<label for="year_leap">Year:</label>
-<input type="text" id="year_leap" name="year_leap" placeholder="yyyy">
-<br>
+
+  <label for="fname">Date:</label><br>
+  <input type="text" id="fname" name="fname" value="MM/DD/YYYY"><br>
+  <label for="lname">Name:</label><br>
+  <input type="text" id="lname" name="lname" value="aadya daita"><br>
+  <br>
+
 <button onclick="isLeapYear()">Go!</button> 
 <br>
 <h3 id="isLeapYear_result"></h3>
