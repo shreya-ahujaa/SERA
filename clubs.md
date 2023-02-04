@@ -31,29 +31,13 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider" id="clubs">
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="role"></td>
-                        <td class="role"> Update </td>
-                        <td class="role"> Delete </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
         <script>
             // prepare fetch urls
             const url = "https://rebeccaaa.tk/api/club";
-            const get_url = url + "/all";
+            const get_url = url + "/";
             const clubContainer = document.getElementById("clubs");
             // prepare fetch GET options
             const options = {
@@ -91,6 +75,13 @@
                         const meeting = document.createElement("td");
                         const info = document.createElement("td");
                         const official = document.createElement("td");
+                        // url containers
+                        const minutes = document.createElement("td");
+                        const reviews = document.createElement("td");
+                        const update = document.createElement("td");
+                        const del = document.createElement("td");
+                        update.setAttribute("class", "role");
+                        del.setAttribute("class", "role");
                         // accessing JSON values
                         id.innerHTML = row.id;
                         name.innerHTML = row.name;
@@ -102,6 +93,8 @@
                         meeting.innerHTML = row.meeting;
                         info.innerHTML = row.info;
                         official.innerHTML = row.official;
+                        update.innerHTML = "Update";
+                        del.innerHTML = "Delete";
                         // add all columns to the row
                         tr.appendChild(id);
                         tr.appendChild(name);
@@ -113,6 +106,10 @@
                         tr.appendChild(meeting);
                         tr.appendChild(info);
                         tr.appendChild(official);
+                        tr.appendChild(minutes);
+                        tr.appendChild(reviews);
+                        tr.appendChild(update);
+                        tr.appendChild(del);
                         // add row to table
                         clubContainer.appendChild(tr);
                     }    
