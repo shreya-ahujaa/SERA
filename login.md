@@ -13,7 +13,6 @@
             }
         </style>
         <script type="text/javascript">
-            // const url = "http://localhost:8192/authenticate";
             const url = "https://rebeccaaa.tk/authenticate";
             function login(){
                 var email = document.getElementById("username").value;
@@ -23,12 +22,13 @@
                 console.log(data);
                 const options = {
                     method: 'POST',
-                    mode: 'cors',
-                    cache: 'default',
+                    // mode: 'cors',
+                    // cache: 'default',
+                    // credentials: 'same-origin',
                     headers: {
                     'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(data),
+                    body: JSON.stringify(data), // convert to JSON
                 };
                 fetch(url, options)
                 .then(response => {
@@ -39,6 +39,8 @@
                 }
                 // valid response
                 console.log(data);
+                // redirect on successful login
+                window.location.href = "{{ site.baseurl }}/";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
