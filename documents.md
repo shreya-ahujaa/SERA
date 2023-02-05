@@ -1,4 +1,5 @@
 <html>
+<br>
 <center> <h1> Meeting Documents Database </h1><center>
 
 
@@ -107,13 +108,11 @@ function isLeapYear(){
 <input type="text" id="name" name="name" value="aadya daita"  maxlength="10" size="4"><br><br>
 
 <textarea id="w3review" name="w3review" rows="4" cols="50">Enter text here</textarea>
-<br>
-<br>
+
 <div class="buttons-container">
   <button class="button-arounder">Submit (hover)</button>
 </div>
 
-<br>
 <label for="year_leap">Year:</label>
 <input type="text" id="year_leap" name="year_leap" placeholder="##">
 <br>
@@ -124,7 +123,3 @@ function isLeapYear(){
 <br>
 
 </center>
-
-
-</html>
-
