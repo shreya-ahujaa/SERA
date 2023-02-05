@@ -13,7 +13,7 @@ body {
 
 .buttons-container {
   width: 100%;
-  height: 100vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@ button {
 }
 
 .button-arounder {
-  font-size: 2rem;
+  font-size: 3rem;
   background: hsl(190deg, 30%, 15%);
   color: hsl(190deg, 10%, 95%);
   
