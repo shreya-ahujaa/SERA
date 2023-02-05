@@ -209,6 +209,7 @@ function dayOfWeek() {
 
 <label for="year2">Year 2:</label>
 <input type="text" id="year2" name="year2" placeholder="yyyy">
+
 <button onclick="numberOfLeapYears()">Go!</button>
 <br>
 <h3 id="numberOfLeapYears"></h3>
