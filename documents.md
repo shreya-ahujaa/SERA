@@ -74,13 +74,13 @@ button {
 
 //is leap year code
 
-function isLeapYear(){
-    var year_leap = document.getElementById("year_leap").value;
+function documents(){
+    var id = document.getElementById("id").value;
+    
+    var str_url = "https://csa.rebeccaaa.tk/api/note/" + id;
+    console.log(str_url)
 
-    var str_url_isLeapYear = "https://csa.rebeccaaa.tk/api/calendar/isLeapYear/" + year_leap;
-    console.log(str_url_isLeapYear)
-
-     fetch(str_url_isLeapYear)
+     fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -91,8 +91,8 @@ function isLeapYear(){
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
-          console.log(data.isLeapYear);
-          document.getElementById("isLeapYear_result").innerHTML = "leap year? " +  data.isLeapYear;
+          console.log(data.document);
+          document.getElementById("document_result").innerHTML = "Documents: " +  data.document;
       })
   })
 
@@ -104,6 +104,10 @@ function isLeapYear(){
 
 <label for="date">Date:</label><br>
 <input type="text" id="date" name="date" value="MM/DD/YYYY"  maxlength="10" size="4"><br>
+
+<label for="id">Club ID:</label><br>
+<input type="text" id="id" name="id" value="##"  maxlength="10" size="4"><br><br>
+
 <label for="name">Name:</label><br>
 <input type="text" id="name" name="name" value="aadya daita"  maxlength="10" size="4"><br><br>
 
@@ -113,12 +117,9 @@ function isLeapYear(){
   <button class="button-arounder">Submit (hover)</button>
 </div>
 
-<label for="year_leap">Year:</label>
-<input type="text" id="year_leap" name="year_leap" placeholder="##">
+<button onclick="documents()">Go!</button> 
 <br>
-<button onclick="isLeapYear()">Go!</button> 
-<br>
-<h3 id="isLeapYear_result"></h3>
+<h3 id="document_result"></h3>
 <br>
 <br>
 
