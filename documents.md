@@ -114,10 +114,8 @@ function documents(){
 <textarea id="w3review" name="w3review" rows="4" cols="50">Enter text here</textarea>
 
 <div class="buttons-container">
-  <button class="button-arounder">Submit (hover)</button>
+  <button class="button-arounder" onclick="documents()">Submit (hover)</button>
 </div>
-
-<button onclick="documents()">Go!</button> 
 <br>
 <h3 id="document_result"></h3>
 <br>
