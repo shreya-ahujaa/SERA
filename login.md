@@ -22,9 +22,9 @@
                 console.log(data);
                 const options = {
                     method: 'POST',
-                    // mode: 'cors',
-                    // cache: 'default',
-                    // credentials: 'same-origin',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
                     headers: {
                     'Content-Type': 'application/json'
                     },
