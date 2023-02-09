@@ -14,6 +14,7 @@
         </style>
         <script type="text/javascript">
             const url = "https://rebeccaaa.tk/authenticate";
+            // const url = "http://localhost:8192/authenticate";
             function login(){
                 var email = document.getElementById("username").value;
                 var password = document.getElementById("password").value;
@@ -40,7 +41,7 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{ site.baseurl }}/";
+                window.location.href = "/";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
