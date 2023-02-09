@@ -41,7 +41,7 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{site.baseurl}}/";
+                window.location.href = "{{ site.baseurl }}/SERA/";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
