@@ -22,7 +22,7 @@
       // valid response will have JSON data
       response.json().then(data => {
         console.log(data);
-        document.getElementById("hello").innerHTML = data;
+        document.getElementById("hello").innerHTML = data.json;
         })
     });
     // Something went wrong with actions or responses
