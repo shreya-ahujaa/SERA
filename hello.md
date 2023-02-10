@@ -11,6 +11,7 @@
         },
     };
     fetch("https://rebeccaaa.tk/hello", options)
+    // fetch("https://rebeccaaa.tk/json", options)
     // fetch("http://localhost:8192/hello", options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
