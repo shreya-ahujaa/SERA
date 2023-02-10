@@ -6,11 +6,12 @@
         cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
         // credentials: 'same-origin', // include, same-origin, omit
         headers: {
-        'Content-Type': 'text/plain'
+        'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
         },
     };
     fetch("https://rebeccaaa.tk/hello", options)
+    // fetch("http://localhost:8192/hello", options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
