@@ -65,11 +65,11 @@
       if(response.status == 200){
         console.log("Logged in");
         // club name or email should go here
-        state.innerHTML = "test";
+        state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle">';
       }
       else{
         console.log("Not logged in");
-        state.innerHTML = '<a class = "btn btn-success" href = "{{site.baseurl}}/login">LOG IN</a>';
+        state.innerHTML = '<a class="btn btn-success" href="{{ site.baseurl }}/login">LOG IN</a>';
       }
     })
   }
