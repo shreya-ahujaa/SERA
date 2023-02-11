@@ -10,8 +10,8 @@
         // 'Content-Type': 'application/x-www-form-urlencoded',
         },
     };
-    // fetch("https://rebeccaaa.tk/hello", options)
-    fetch("http://localhost:8192/hello", options)
+    fetch("https://rebeccaaa.tk/hello", options)
+    // fetch("http://localhost:8192/hello", options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
