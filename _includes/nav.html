@@ -50,7 +50,6 @@
   const url = "https://rebeccaaa.tk/hello";
   // div to store email or login
   const state = document.getElementById("state");
-  const anc = document.createElement("a");
   function authenticated(){
     const options = {
       method: 'GET',
@@ -66,15 +65,12 @@
       if(response.status == 200){
         console.log("Logged in");
         // club name or email should go here
-        anc.innerHTML = "test";
+        state.innerHTML = "test";
       }
       else{
         console.log("Not logged in");
-        anc.setAttribute("class", "btn btn-success");
-        anc.innerHTML = "LOG IN";
-        anc.href = "{{ site.baseurl }}/login";
+        state.innerHTML = '<a class = "btn btn-success" href = "{{site.baseurl}}/login">LOG IN</a>';
       }
-      state.appendChild(anc);
     })
   }
   window.onload = authenticated();
