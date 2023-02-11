@@ -36,6 +36,7 @@
         </div>
         <script>
             // prepare fetch urls
+            // const club_url = "http://localhost:8192/api/club";
             const club_url = "https://rebeccaaa.tk/api/club";
             const get_url = club_url + "/";
             const clubContainer = document.getElementById("clubs");
