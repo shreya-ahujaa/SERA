@@ -36,8 +36,8 @@
         </div>
         <script>
             // prepare fetch urls
-            const url = "https://rebeccaaa.tk/api/club";
-            const get_url = url + "/";
+            const club_url = "https://rebeccaaa.tk/api/club";
+            const get_url = club_url + "/";
             const clubContainer = document.getElementById("clubs");
             // prepare fetch GET options
             const options = {
