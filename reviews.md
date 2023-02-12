@@ -26,7 +26,7 @@
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
-            const get_url = review_url + "/" + ${id};
+            const get_url = review_url + "/25" ;
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
@@ -54,17 +54,17 @@
                         console.log(row);
                         // columns
                         const tr = document.createElement("tr");
-                        const reviewid = document.createElement("td");
+                        const review_id = document.createElement("td");
                         const review = document.createElement("td");
                         const likes = document.createElement("td");
                         const dislikes = document.createElement("td");
                         // accessing JSON values
-                        reviewid.innerHTML = row.id;
+                        review_id.innerHTML = row.id;
                         review.innerHTML = row.text;
                         likes.innerHTML = row.likes;
                         dislikes.innerHTML = row.dislikes;
                         // add all columns to the row
-                        tr.appendChild(reviewid);
+                        tr.appendChild(review_id);
                         tr.appendChild(review);
                         tr.appendChild(likes);
                         tr.appendChild(dislikes);
