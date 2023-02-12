@@ -1,8 +1,8 @@
 <html>
 <br>
-<h1> Meeting Documents Database </h1>
+<center> <h1> Meeting Documents Database </h1><center>
 
-<!--
+
 
 <style>
 body {
@@ -70,7 +70,6 @@ button {
 }
 
 </style>
--->
 <script>
 
 //is leap year code
@@ -99,31 +98,26 @@ function documents(){
 
 
 </script>
+<center>
 
-
-<!--
 <label for="date">Date:</label><br>
 <input type="text" id="date" name="date" value="MM/DD/YYYY"  maxlength="10" size="4"><br>
--->
+
 <label for="id">Club ID:</label><br>
 <input type="text" id="id" name="id" value="##"  maxlength="10" size="4"><br><br>
 
-
-<!--
 <label for="name">Name:</label><br>
 <input type="text" id="name" name="name" value="aadya daita"  maxlength="10" size="4"><br><br>
 
 <textarea id="w3review" name="w3review" rows="4" cols="50">Enter text here</textarea>
--->
-<button onclick="documents()">Go!</button>
 
-<!--
+
 <div class="buttons-container">
-  <button class="button-arounder" >Submit (hover)</button>
+  <button class="button-arounder" onclick="documents()">Submit (hover)</button>
 </div>
 <br>
 <h3 id="document_result"></h3>
 <br>
 <br>
 
--->
+</center>
