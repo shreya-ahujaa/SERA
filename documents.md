@@ -79,8 +79,7 @@ function documents(){
     
     var str_url = "https://csa.rebeccaaa.tk/api/note/" + id;
     console.log(str_url)
-
-     fetch(str_url)
+    fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
