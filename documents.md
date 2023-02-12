@@ -76,7 +76,6 @@ button {
 
 function documents(){
     var id = document.getElementById("id").value;
-    
     var str_url = "https://csa.rebeccaaa.tk/api/note/" + id;
     console.log(str_url)
     fetch(str_url)
@@ -112,8 +111,11 @@ function documents(){
 
 <textarea id="w3review" name="w3review" rows="4" cols="50">Enter text here</textarea>
 
+<button onclick="documents()">Go!</button>
+
+<!--
 <div class="buttons-container">
-  <button class="button-arounder" onclick="documents()">Submit (hover)</button>
+  <button class="button-arounder" >Submit (hover)</button>
 </div>
 <br>
 <h3 id="document_result"></h3>
@@ -121,3 +123,4 @@ function documents(){
 <br>
 
 </center>
+-->
