@@ -13,7 +13,8 @@
             }
         </style>
         <script type="text/javascript">
-            const url = "https://rebeccaaa.tk/authenticate";
+            const login_url = "https://rebeccaaa.tk/authenticate";
+            // const login_url = "http://localhost:8192/authenticate";
             function login(){
                 var email = document.getElementById("username").value;
                 var password = document.getElementById("password").value;
@@ -22,15 +23,15 @@
                 console.log(data);
                 const options = {
                     method: 'POST',
-                    // mode: 'cors',
-                    // cache: 'default',
-                    // credentials: 'same-origin',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
                     headers: {
                     'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data), // convert to JSON
                 };
-                fetch(url, options)
+                fetch(login_url, options)
                 .then(response => {
                 // check for response errors
                 if (response.status !== 200) {
@@ -40,18 +41,18 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{ site.baseurl }}/";
+                window.location.href = "{{site.baseurl}}/hello";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
                     error(err + " " + url);
                 });
-                }    
-                // Something went wrong with actions or responses
-                function error(err) {
-                    // log as Error in console
-                    console.log(err);
-                }
+            }    
+            // Something went wrong with actions or responses
+            function error(err) {
+                // log as Error in console
+                console.log(err);
+            }
         </script>
     </head>
     <body>

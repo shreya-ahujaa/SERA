@@ -13,9 +13,9 @@
             }
         </style>
         <script type="text/javascript">
-            const signup_url = "https://rebeccaaa.tk/api/club/post";
-            // const signup_url = "http://localhost:8192/api/club/post";
-            function signup(){
+            const update_url = "https://rebeccaaa.tk/api/club/update/";
+            // const update_url = "http://localhost:8192/api/club/update/";
+            function update(){
                 var email = document.getElementById("username").value;
                 var password = document.getElementById("password").value;
                 var name = document.getElementById("name").value;
@@ -38,7 +38,7 @@
                     },
                     body: JSON.stringify(data), // convert to JSON
                 };
-                fetch(signup_url, options)
+                fetch(update_url, options)
                 .then(response => {
                 // check for response errors
                 if (response.status !== 201) {
@@ -64,7 +64,7 @@
     </head>
     <body>
         <div class="bg-success w-50 mx-auto m-5">
-            <h2 class="text-light mx-5 pt-5">SIGN UP</h2>
+            <h2 class="text-light mx-5 pt-5">Update Club Profile</h2>
             <!-- 'email' is mapped to 'username' for Spring Security -->
             <div class="mb-3 px-5">
                 <label class="form-label" for="username">EMAIL</label>
@@ -102,10 +102,7 @@
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
                 <input class="form-control" type="text" id="info" name="info" size="20">
             </div>
-            <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="signup()">Sign Up</button>
-            <div class="text-light mx-5 pb-3">
-                <p class="login">Already registered your club? <a class="text-light" href="{{ site.baseurl }}/login">Log In</a></p>
-            </div>
+            <button class="btn btn-custom text-nowrap text-light my-3 mx-5 mb-4" type="submit" onclick="update()">Update</button>
         </div>
     </body>
 </html>
