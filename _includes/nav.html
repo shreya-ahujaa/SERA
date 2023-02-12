@@ -49,34 +49,3 @@
     </div>
   </div>
 </nav>
-
-<script type="text/javascript">
-  // const url = "http://localhost:8192/hello"
-  const url = "https://rebeccaaa.tk/hello";
-  // div to store email or login
-  const state = document.getElementById("state");
-  function authenticated(){
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'include',
-      headers: {
-      'Content-Type': 'application/json'
-      },
-    };
-    fetch(url, options)
-    .then(response => {
-      if(response.status == 200){
-        console.log("Logged in");
-        // club name or email should go here
-        state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><a class="btn btn-success" href="">LOG OUT</a>';
-      }
-      else{
-        console.log("Not logged in");
-        state.innerHTML = '<a class="btn btn-success" href="{{ site.baseurl }}/login">LOG IN</a>';
-      }
-    })
-  }
-  window.onload = authenticated();
-</script>
