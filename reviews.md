@@ -25,13 +25,14 @@
         <div>
         <h2 class="text-center m-5 text-success">Add Review</h2>
         <input class="form-control" type="text" id="review" name="review" size="20" required>
-        <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="addreview()">Add Review</button>
+        <button class="btn btn-custom text-nowrap my-3 mx-5" type="submit" onclick="addreview()">Add Review</button>
         </div>
         <script>
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
-            const get_url = review_url + "/25";
+            const clud_id = document.getElementById("id").value;
+            const get_url = review_url + "/" + club_id;
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
