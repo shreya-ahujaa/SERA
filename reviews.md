@@ -93,7 +93,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                clubContainer.appendChild(tr);
+                reviewContainer.appendChild(tr);
             }
             // const addreview_url = "http://localhost:8192/database/addreview/25";
             const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
