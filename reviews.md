@@ -25,9 +25,9 @@
         <div>
         <h2 class="text-center m-5 text-success">Add Review</h2>
         <input type="text" id="review" name="review" size="20" required>
-        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="addreview()">Add</button>
+        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
         </div>
-        <script>
+        <script type="text/javascript">
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
@@ -95,8 +95,8 @@
                 tr.appendChild(td);
                 clubContainer.appendChild(tr);
             }
-            function addreview(){
-                const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+            const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+            function add_review(){
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
                 let data = {text: review_text};
