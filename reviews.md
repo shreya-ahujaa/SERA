@@ -31,9 +31,9 @@
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://csa.rebeccaaa.tk/database/reviews";
-            //const clud_id = document.getElementById("id").value;
+            //const club_id = document.getElementById("id").value;
             //const get_url = review_url + "/" + club_id;
-            const get_url = review_url + "/" + "25";
+            const get_url = review_url + "/25";
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
