@@ -21,9 +21,11 @@
                 <tbody class="table-group-divider" id="reviews">
                 </tbody>
             </table>
-        <h2 class="text-center m-5 text-success">Add Review</h1>
-        <input type="text" id="review" name="review" placeholder="Add Review Here" size="40">
-        <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="signup()">Sign Up</button>
+        </div>
+        <div>
+        <h2 class="text-center m-5 text-success">Add Review</h2>
+        <input class="form-control" type="text" id="review" name="review" size="20" required>
+        <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="addreview()">Add Review</button>
         </div>
         <script>
             // prepare fetch urls
