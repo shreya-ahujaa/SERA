@@ -24,15 +24,16 @@
         </div>
         <div>
         <h2 class="text-center m-5 text-success">Add Review</h2>
-        <input class="form-control" type="text" id="review" name="review" size="20" required>
-        <button class="btn btn-custom text-nowrap my-3 mx-5" type="submit" onclick="addreview()">Add Review</button>
+        <input type="text" id="review" name="review" size="20" required>
+        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="addreview()">Add</button>
         </div>
         <script>
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
-            const review_url = "https://rebeccaaa.tk/database/reviews";
-            const clud_id = document.getElementById("id").value;
-            const get_url = review_url + "/" + club_id;
+            const review_url = "https://csa.rebeccaaa.tk/database/reviews";
+            //const clud_id = document.getElementById("id").value;
+            //const get_url = review_url + "/" + club_id;
+            const get_url = review_url + "/" + "25";
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
@@ -95,7 +96,7 @@
                 clubContainer.appendChild(tr);
             }
             function addreview(){
-                const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+                const addreview_url = "https://csa.rebeccaaa.tk/database/addreview/25";
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
                 let data = {text: review_text};
@@ -120,7 +121,7 @@
                     // valid response
                     console.log(data);
                     // redirect on successful add review
-                    //window.location.href = "{{ site.baseurl }}/";
+                    window.location.href = "{{ site.baseurl }}/";
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
