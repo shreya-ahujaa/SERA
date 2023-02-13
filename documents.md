@@ -76,7 +76,7 @@ button {
 
 function documents(){
     var id = document.getElementById("id").value;
-    var str_url = "https://csa.rebeccaaa.tk/api/note/" + id;
+    var str_url = "https://rebeccaaa.tk/api/note/" + id;
     console.log(str_url)
     fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
