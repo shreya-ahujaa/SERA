@@ -30,7 +30,7 @@
         <script>
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
-            const review_url = "https://csa.rebeccaaa.tk/database/reviews";
+            const review_url = "https://rebeccaaa.tk/database/reviews";
             //const club_id = document.getElementById("id").value;
             //const get_url = review_url + "/" + club_id;
             const get_url = review_url + "/25";
@@ -96,7 +96,7 @@
                 clubContainer.appendChild(tr);
             }
             function addreview(){
-                const addreview_url = "https://csa.rebeccaaa.tk/database/addreview/25";
+                const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
                 let data = {text: review_text};
