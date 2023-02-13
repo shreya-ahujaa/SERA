@@ -21,6 +21,9 @@
                 <tbody class="table-group-divider" id="reviews">
                 </tbody>
             </table>
+        <h2 class="text-center m-5 text-success">Add Review</h1>
+        <input type="text" id="review" name="review" placeholder="Add Review Here" size="40">
+        <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="signup()">Sign Up</button>
         </div>
         <script>
             // prepare fetch urls
@@ -88,6 +91,39 @@
                 tr.appendChild(td);
                 clubContainer.appendChild(tr);
             }
+            function addreview(){
+                const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+                var review_text = document.getElementById("review").value;
+                // store data in JavaScript object
+                let data = {text: review_text};
+                console.log(data);
+                const options = {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data), // convert to JSON
+                };
+                fetch(addreview_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // valid response
+                    console.log(data);
+                    // redirect on successful add review
+                    //window.location.href = "{{ site.baseurl }}/";
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + url);
+                });
+            }    
         </script>
     </body>
 </html>
