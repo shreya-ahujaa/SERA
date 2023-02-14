@@ -19,12 +19,12 @@
                 console.log(delete_url);
                 const options = {
                     method: 'DELETE',
-                    // // mode: 'cors',
-                    // cache: 'no-cache',
-                    // credentials: 'include',
-                    //  headers: {
-                    //     'Content-Type': 'application/json'
-                    // },
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                     headers: {
+                        'Content-Type': 'application/json'
+                    },
                 };
                 fetch(delete_url, options)
                 .then(response => {
