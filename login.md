@@ -41,7 +41,7 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{site.baseurl}}/hello";
+                window.location.href = "{{site.baseurl}}/profile";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {

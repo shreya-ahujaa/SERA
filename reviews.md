@@ -22,10 +22,17 @@
                 </tbody>
             </table>
         </div>
-        <script>
+        <div>
+        <h2 class="text-center m-5 text-success">Add Review</h2>
+        <input type="text" id="review" name="review" size="20" required>
+        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
+        </div>
+        <script type="text/javascript">
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
+            //const club_id = document.getElementById("id").value;
+            //const get_url = review_url + "/" + club_id;
             const get_url = review_url + "/25";
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
@@ -80,14 +87,47 @@
             // Something went wrong with actions or responses
             function error(err) {
                 // log as Error in console
-                console.error(err);
+                console.log(err);
                 // append error to resultContainer
                 const tr = document.createElement("tr");
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                clubContainer.appendChild(tr);
+                reviewContainer.appendChild(tr);
             }
+            // const addreview_url = "http://localhost:8192/database/addreview/25";
+            const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+            function add_review(){
+                var review_text = document.getElementById("review").value;
+                // store data in JavaScript object
+                console.log(review_text);
+                const options = {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'text/html; charset=utf-8'
+                    },
+                    body: review_text, // convert to JSON
+                };
+                fetch(addreview_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // valid response
+                    console.log(review_text);
+                    // redirect on successful add review
+                    window.location.href = "{{ site.baseurl }}/";
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + url);
+                });
+            }    
         </script>
     </body>
 </html>

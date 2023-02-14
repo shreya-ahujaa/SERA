@@ -44,7 +44,6 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success text-nowrap" onclick="clubSearch();">SEARCH CLUBS</button>
-
       </form>
     </div>
   </div>
@@ -70,7 +69,7 @@
       if(response.status == 200){
         console.log("Logged in");
         // club name or email should go here
-        state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><a class="btn btn-success" href="">LOG OUT</a>';
+        state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><button class="btn btn-success text-nowrap" onclick="logout();">LOGOUT</button>';
       }
       else{
         console.log("Not logged in");
