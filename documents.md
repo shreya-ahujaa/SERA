@@ -89,8 +89,8 @@ function documents(){
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
-          for (const row of data.text) {
-            document.getElementById("document_result").innerHTML = "Documents: " +  data.text;
+          for (const row of data) {
+            document.getElementById("document_result").innerHTML = "Documents: " +  row.text;
       
           }
       })
