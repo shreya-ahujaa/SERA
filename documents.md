@@ -78,7 +78,7 @@ function documents(){
     var id = document.getElementById("id").value;
     var str_url = "https://rebeccaaa.tk/api/note/" + id;
     console.log(str_url);
-    fetch(str_url, options)
+    fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
