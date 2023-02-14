@@ -19,9 +19,9 @@
                 console.log(delete_url);
                 const options = {
                     method: 'DELETE',
-                    mode: 'cors',
+                    // mode: 'cors',
                     cache: 'no-cache',
-                    credentials: 'include',
+                    credentials: 'same-origin',
                      headers: {
                         'Content-Type': 'application/json'
                     },
