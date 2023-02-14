@@ -19,7 +19,7 @@
                 console.log(delete_url);
                 const options = {
                     method: 'DELETE',
-                    // mode: 'cors',
+                    mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'same-origin',
                      headers: {
