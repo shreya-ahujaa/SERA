@@ -77,8 +77,8 @@ button {
 function documents(){
     var id = document.getElementById("id").value;
     var str_url = "https://rebeccaaa.tk/api/note/" + id;
-    console.log(str_url)
-    fetch(str_url)
+    console.log(str_url);
+    fetch(str_url, options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -89,8 +89,8 @@ function documents(){
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
-          console.log(data.document);
-          document.getElementById("document_result").innerHTML = "Documents: " +  data.document;
+          console.log(data.text);
+          document.getElementById("document_result").innerHTML = "Documents: " +  data.text;
       })
   })
 
