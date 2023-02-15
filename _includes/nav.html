@@ -84,7 +84,7 @@
               console.log(data);
               console.log(data.name);
               club = data.name;
-              state.innerHTML ='<img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><div class="btn-group"><button id="club-name" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Placeholder</button><ul class="dropdown-menu"><li><a class="dropdown-item" href="{{ site.baseurl }}/profile">Profile</a></li><li><a class="dropdown-item" href="{{site.baseurl}}/update">Update Profile</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Logout</a></li></ul></div>';
+              state.innerHTML ='<img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><div class="btn-group"><button id="club-name" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Placeholder</button><ul class="dropdown-menu"><li><a class="dropdown-item" href="{{ site.baseurl }}/profile">Profile</a></li><li><a class="dropdown-item" href="{{site.baseurl}}/update">Update Profile</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="{{ site.baseurl }}/delete">Account</a></li><li><a class="dropdown-item" href="#">Logout</a></li></ul></div>';
               const cn = document.getElementById("club-name");
               cn.innerHTML = club;
             })
