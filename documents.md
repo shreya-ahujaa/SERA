@@ -99,26 +99,76 @@ function documents(){
 }
 
 
+  // const signup_url = "http://localhost:8192/api/club/post";
+  function signup(){
+      const signup_url = "https://rebeccaaa.tk/api/note/post";
+      var text = document.getElementById("text").value;
+      var name = document.getElementById("name").value;
+    
+      // store data in JavaScript object
+      let data = {text: text, name: name};
+      console.log(data);
+      const options = {
+          method: 'POST',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'include',
+          headers: {
+          'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data), // convert to JSON
+      };
+      fetch(signup_url, options)
+      .then(response => {
+      // check for response errors
+      if (response.status !== 201) {
+          error('POST API response failure: ' + response.status);
+          return;
+      }
+      // valid response
+      console.log(data);
+      // redirect on successful login
+      window.location.href = "{{ site.baseurl }}/";
+      })
+      // catch fetch errors (ie Nginx ACCESS to server blocked)
+      .catch(err => {
+          error(err + " " + url);
+      });
+  }    
+  // Something went wrong with actions or responses
+  function error(err) {
+      // log as Error in console
+      console.log(err);
+  }
+
+
 </script>
 <center>
 
-<label for="date">Date:</label><br>
+<label for="date" style="color:black;">Date:</label><br>
 <input type="text" id="date" name="date" value="MM/DD/YYYY"  maxlength="10" size="4"><br>
 
-<label for="id">Club ID:</label><br>
+<label for="id" style="color:black;" >Club ID:</label><br>
 <input type="text" id="id" name="id" value="##"  maxlength="10" size="4"><br><br>
 
-<label for="name">Name:</label><br>
+<label for="name" style="color:black;">Name:</label><br>
 <input type="text" id="name" name="name" value="aadya daita"  maxlength="10" size="4"><br><br>
 
-<textarea id="w3review" name="w3review" rows="4" cols="50">Enter text here</textarea>
+<textarea id="text" name="text" rows="4" cols="50">Enter text here</textarea>
 
 
 <div class="buttons-container">
-  <button class="button-arounder" onclick="documents()">Submit (hover)</button>
+  <button class="button-arounder" onclick="documents()">Submit (old notes)</button>
 </div>
 <br>
 <h3 id="document_result"></h3>
+<br>
+<br>
+
+
+<div class="buttons-container">
+  <button class="button-arounder">Submit (new notes)</button>
+</div>
 <br>
 <br>
 
