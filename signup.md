@@ -12,10 +12,11 @@
                 border-color: #ffffff;
             }
         </style>
-        <script type="text/javascript">
+        <script>
             const signup_url = "https://rebeccaaa.tk/api/club/post";
             // const signup_url = "http://localhost:8192/api/club/post";
             function signup(){
+                // get user input
                 var email = document.getElementById("username").value;
                 var password = document.getElementById("password").value;
                 var name = document.getElementById("name").value;
@@ -48,7 +49,7 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{ site.baseurl }}/";
+                window.location.href = "{{ site.baseurl }}/clubs";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {

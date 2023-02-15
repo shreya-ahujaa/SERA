@@ -12,7 +12,7 @@
                 border-color: #ffffff;
             }
         </style>
-        <script type="text/javascript">
+        <script>
             const update_url = "https://rebeccaaa.tk/api/club/update/";
             // const update_url = "http://localhost:8192/api/club/update/";
             function update(){
@@ -28,6 +28,9 @@
                 // store data in JavaScript object
                 let data = {email: email, password: password, name: name, types: types, purpose: purpose, president: president, advisor: advisor, meeting: meeting, info: info, official: null};
                 console.log(data);
+                // get ID of currently logged in user from sessionStorage
+                const storedData = JSON.parse(sessionStorage.getItem('ID'));
+                console.log(storedData);
                 const options = {
                     method: 'POST',
                     mode: 'cors',
@@ -38,7 +41,8 @@
                     },
                     body: JSON.stringify(data), // convert to JSON
                 };
-                fetch(update_url, options)
+                const update_url_id = update_url + storedData; // url with ID
+                fetch(update_url_id, options)
                 .then(response => {
                 // check for response errors
                 if (response.status !== 200) {
@@ -48,7 +52,7 @@
                 // valid response
                 console.log(data);
                 // redirect on successful login
-                window.location.href = "{{ site.baseurl }}/";
+                window.location.href = "{{ site.baseurl }}/profile";
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {

@@ -10,6 +10,7 @@
       DEL NORTE HIGH SCHOOL CLUBS
     </a>
     <div id="state">
+      <!-- login or logout -->
     </div>  
   </div>
 </nav>
@@ -49,7 +50,7 @@
   </div>
 </nav>
 
-<script type="text/javascript">
+<script>
   // const url = "http://localhost:8192/hello"
   const url = "https://rebeccaaa.tk/hello";
   // div to store email or login
@@ -69,13 +70,16 @@
       if(response.status == 200){
         console.log("Logged in");
         // club name or email should go here
+        // logout button
         state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><button class="btn btn-success text-nowrap" onclick="logout();">LOGOUT</button>';
       }
       else{
         console.log("Not logged in");
+        // login button
         state.innerHTML = '<a class="btn btn-success" href="{{ site.baseurl }}/login">LOG IN</a>';
       }
     })
   }
+  // call function on every page load
   window.onload = authenticated();
 </script>
