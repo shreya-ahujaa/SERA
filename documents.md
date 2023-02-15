@@ -167,7 +167,7 @@ function documents(){
 
 
 <div class="buttons-container">
-  <button class="button-arounder">Submit (new notes)</button>
+  <button class="button-arounder" onclick="signup()">Submit (new notes)</button>
 </div>
 <br>
 <br>
