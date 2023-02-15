@@ -1,5 +1,17 @@
 <html>
     <head>
+        <style>
+            .btn-custom {
+                color: #fff;
+                background-color: #198754;
+                border-color: #ffffff;
+            }
+            .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active, .open>.dropdown-toggle.btn-custom {
+                color: #fff;
+                background-color: #157347;
+                border-color: #ffffff;
+            }
+        </style>
         <script>
             // prepare fetch GET options
             const options = {
@@ -69,6 +81,7 @@
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
                 <p id="info"></p>
             </div>
+            <a class="btn btn-custom text-nowrap text-light my-3 mx-5 mb-4" type="submit" href="{{ site.baseurl }}/update">Update Profile</a>
         </div>  
         <script>
             const storedData = JSON.parse(localStorage.getItem('ID'));
