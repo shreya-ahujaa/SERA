@@ -129,11 +129,6 @@
             const confirm_password = document.getElementById("confirm_password");
             // Add an event listener to the confirm_password field that calls validatePassword() on input
             confirm_password.addEventListener("input", validatePassword);
-             // Get references to the password and confirm_password input fields
-            const password = document.getElementById("password");
-            const confirm_password = document.getElementById("confirm_password");
-            // Add an event listener to the confirm_password field that calls validatePassword() on input
-            confirm_password.addEventListener("input", validatePassword);
             var myInput = document.getElementById("password");
             // When the user clicks on the password field, show the message box
             myInput.onfocus = function() {
