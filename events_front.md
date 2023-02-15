@@ -23,8 +23,8 @@
   const ATTEND = "attend";
   const SKIP = "skip";
 
-  const url = "https://rebeccaaa.tk/api/event";
-  const get_url = url +"/";
+  const url = "https://rebeccaaa.tk/api/event/";
+  //const get_url = url +"/";
   const attend_url = url + "/attend/";  // attend reaction
   const skip_url = url + "/skip/";  // skip reaction
 
@@ -43,7 +43,7 @@
   const put_options = {...options, method: 'PUT'}; // clones and replaces method
 
   // fetch the API
-  fetch(get_url, options)
+  fetch(url)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
