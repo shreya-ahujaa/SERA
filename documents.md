@@ -118,7 +118,7 @@ function documents(){
           },
           body: JSON.stringify(data), // convert to JSON
       };
-      fetch(signup_url, options)
+      fetch(signup_url)
       .then(response => {
       // check for response errors
       if (response.status !== 201) {
