@@ -15,7 +15,7 @@
         <script type="text/javascript">
             const search_url = "https://rebeccaaa.tk/api/club/search";    
         function clubSearch() {
-            window.location.href = "{{ site.baseurl }}/";
+            window.location.href = "{{ site.baseurl }}/search";
             // fetch standard requires database set to a name-value pair
             const term = document.getElementById("term");
             const body = {
