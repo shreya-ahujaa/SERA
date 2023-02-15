@@ -23,7 +23,7 @@
   const ATTEND = "attend";
   const SKIP = "skip";
 
-  const url = "https://csa.rebeccaaa.tk/api/event";
+  const url = "https://rebeccaaa.tk/api/event";
   const get_url = url +"/";
   const attend_url = url + "/attend/";  // attend reaction
   const skip_url = url + "/skip/";  // skip reaction

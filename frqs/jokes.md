@@ -25,7 +25,7 @@
 
   // prepare fetch urls
   // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
-  const url = "https://csa.rebeccaaa.tk/api/jokes";
+  const url = "https://rebeccaaa.tk/api/jokes";
   const get_url = url +"/";
   const like_url = url + "/like/";  // haha reaction
   const jeer_url = url + "/jeer/";  // boohoo reaction
