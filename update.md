@@ -16,9 +16,6 @@
             const update_url = "https://rebeccaaa.tk/api/club/update/";
             // const update_url = "http://localhost:8192/api/club/update/";
             function update(){
-                // confirm requirements, matching
-                securePassword();
-                validatePassword();
                 var email = document.getElementById("username").value;
                 var pwd = document.getElementById("password").value;
                 var name = document.getElementById("name").value;
@@ -28,6 +25,9 @@
                 var advisor = document.getElementById("advisor").value;
                 var meeting = document.getElementById("meeting").value;
                 var info = document.getElementById("info").value;
+                // confirm requirements, matching
+                securePassword();
+                validatePassword();
                 // store data in JavaScript object
                 let data = {email: email, password: pwd, name: name, types: types, purpose: purpose, president: president, advisor: advisor, meeting: meeting, info: info, official: null};
                 console.log(data);

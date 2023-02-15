@@ -21,9 +21,6 @@
             const signup_url = "https://rebeccaaa.tk/api/club/post";
             // const signup_url = "http://localhost:8192/api/club/post";
             function signup(){
-                // confirm requirements, matching
-                securePassword();
-                validatePassword();
                 // get user input
                 var email = document.getElementById("username").value;
                 var pwd = document.getElementById("password").value;
@@ -34,6 +31,9 @@
                 var advisor = document.getElementById("advisor").value;
                 var meeting = document.getElementById("meeting").value;
                 var info = document.getElementById("info").value;
+                // confirm requirements, matching
+                securePassword();
+                validatePassword();
                 // store data in JavaScript object
                 let data = {email: email, password: pwd, name: name, types: types, purpose: purpose, president: president, advisor: advisor, meeting: meeting, info: info, official: null};
                 console.log(data);
@@ -97,7 +97,7 @@
                 <input class="form-control" type="text" id="purpose" name="purpose" size="250" required>
             </div>
             <div class="mb-3 px-5">
-                <label class="form-label" for="types">CLUB TYPE(S) (Advocacy/Awareness, Cultural, Environment, Service, STEM, Visual/Performing Arts</label>
+                <label class="form-label" for="types">CLUB TYPE(S) (Advocacy/Awareness, Competition, Cultural, Environment, Service, STEM, Visual/Performing Arts)</label>
                 <input class="form-control" type="text" id="types" name="types" size="20" required>
             </div>
             <div class="mb-3 px-5">
