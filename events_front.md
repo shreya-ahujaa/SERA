@@ -1,12 +1,11 @@
-# Events Frontend
 <!-- HTML table fragment for page -->
 <table>
   <thead>
   <tr>
     <th>Event</th>
-    <th>Will Attent</th>
-    <th>Will Skip</th>
-  </tr>
+    <th>Attend</th>
+    <th>Skip</th>
+  </tr> 
   </thead>
   <tbody id="result">
     <!-- javascript generated data -->
@@ -19,14 +18,16 @@
   // prepare HTML defined "result" container for new output
   const resultContainer = document.getElementById("result");
 
-  // keys for event reactions
-  const ATTEND = "attend";
-  const SKIP = "skip";
+  // keys for product reactions
+  const attend = "attend";
+  const skip = "skip";
 
-  const url = "https://csa.rebeccaaa.tk/api/event";
+  // prepare fetch urls
+  // const url = "https://flask.nighthawkcodingsociety.com/api/products";
+  const url = "https://rebeccaaa.tk/api/event";
   const get_url = url +"/";
-  const attend_url = url + "/attend/";  // attend reaction
-  const skip_url = url + "/skip/";  // skip reaction
+  const attend_url = url + "/attend/";  
+  const skip_url = url + "/skip/";  
 
   // prepare fetch GET options
   const options = {
@@ -58,29 +59,29 @@
             // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
             
-            // td for event cell
+            // td for product cell
             const event = document.createElement("td");
               event.innerHTML = row.id + ". " + row.event;  // add fetched data to innerHTML
 
             // td for attend cell with onclick actions
             const attend = document.createElement("td");
               const attend_but = document.createElement('button');
-              attend_but.id = ATTEND+row.id   // establishes a attend JS id for cell
+              attend_but.id = attend+row.id   // establishes a attend JS id for cell
               attend_but.innerHTML = row.attend;  // add fetched "attend count" to innerHTML
               attend_but.onclick = function () {
                 // onclick function call with "like parameters"
-                reaction(ATTEND, attend_url+row.id, attend_but.id);  
+                reaction(attend, attend_url+row.id, attend_but.id);  
               };
               attend.appendChild(attend_but);  // add "attend button" to attend cell
 
             // td for skip cell with onclick actions
             const skip = document.createElement("td");
               const skip_but = document.createElement('button');
-              skip_but.id = SKIP+row.id  // establishes a skip JS id for cell
+              skip_but.id = skip+row.id  // establishes a skip JS id for cell
               skip_but.innerHTML = row.skip;  // add fetched "skip count" to innerHTML
               skip_but.onclick = function () {
-                // onclick function call with "jeer parameters"
-                reaction(SKIP, skip_url+row.id, skip_but.id);  
+                // onclick function call with "skip parameters"
+                reaction(skip, skip_url+row.id, skip_but.id);  
               };
               skip.appendChild(skip_but);  // add "skip button" to skip cell
              
@@ -99,7 +100,7 @@
     error(err + " " + get_url);
   });
 
-  // Reaction function to likes or jeers user actions
+  // Reaction function to likes or skips user actions
   function reaction(type, put_url, elemID) {
 
     // fetch the API
@@ -114,10 +115,10 @@
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
-          // Likes or Jeers updated/incremented
-          if (type === ATTEND) // like data element
+          // Likes or skips updated/incremented
+          if (type === attend) // like data element
             document.getElementById(elemID).innerHTML = data.attend;  // fetched attend data assigned to attend Document Object Model (DOM)
-          else if (type === SKIP) // jeer data element
+          else if (type === skip) // skip data element
             document.getElementById(elemID).innerHTML = data.skip;  // fetched skip data assigned to skip Document Object Model (DOM)
           else
             error("unknown type: " + type);  // should never occur

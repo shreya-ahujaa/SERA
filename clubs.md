@@ -1,11 +1,4 @@
 <html>
-    <head>
-        <style>
-            .role {
-                color: red;
-            }
-        </style>
-    </head>
     <body>
         <h1 class="text-center m-5 text-success">DNHS CLUB LIST</h1>
         <div class="table-responsive mx-5">
@@ -25,9 +18,6 @@
                         <!-- Links -->
                         <th scope="col">Meeting Minutes</th>
                         <th scope="col">Reviews</th>
-                        <!-- Update and delete -->
-                        <th scope="col"></th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider" id="clubs">
@@ -62,6 +52,7 @@
                 }
                 // valid response will have JSON data
                 response.json().then(data => {
+                    let i = 1;
                     for (const row of data) {
                         console.log(row);
                         // columns
@@ -79,12 +70,8 @@
                         // url containers
                         const minutes = document.createElement("td");
                         const reviews = document.createElement("td");
-                        const update = document.createElement("td");
-                        const del = document.createElement("td");
-                        update.setAttribute("class", "role");
-                        del.setAttribute("class", "role");
                         // accessing JSON values
-                        id.innerHTML = row.id;
+                        id.innerHTML = i;
                         name.innerHTML = row.name;
                         purpose.innerHTML = row.purpose;
                         types.innerHTML = row.types;
@@ -94,8 +81,6 @@
                         meeting.innerHTML = row.meeting;
                         info.innerHTML = row.info;
                         official.innerHTML = row.official;
-                        update.innerHTML = "Update";
-                        del.innerHTML = "Delete";
                         // add all columns to the row
                         tr.appendChild(id);
                         tr.appendChild(name);
@@ -109,10 +94,9 @@
                         tr.appendChild(official);
                         tr.appendChild(minutes);
                         tr.appendChild(reviews);
-                        tr.appendChild(update);
-                        tr.appendChild(del);
                         // add row to table
                         clubContainer.appendChild(tr);
+                        i++;
                     }    
                 })
             })

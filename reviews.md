@@ -87,29 +87,29 @@
             // Something went wrong with actions or responses
             function error(err) {
                 // log as Error in console
-                console.error(err);
+                console.log(err);
                 // append error to resultContainer
                 const tr = document.createElement("tr");
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                clubContainer.appendChild(tr);
+                reviewContainer.appendChild(tr);
             }
+            // const addreview_url = "http://localhost:8192/database/addreview/25";
             const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
             function add_review(){
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
-                let data = {text: review_text};
-                console.log(data);
+                console.log(review_text);
                 const options = {
                     method: 'POST',
                     mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'include',
                     headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'text/html; charset=utf-8'
                     },
-                    body: JSON.stringify(data), // convert to JSON
+                    body: review_text, // convert to JSON
                 };
                 fetch(addreview_url, options)
                 .then(response => {
@@ -119,7 +119,7 @@
                         return;
                     }
                     // valid response
-                    console.log(data);
+                    console.log(review_text);
                     // redirect on successful add review
                     window.location.href = "{{ site.baseurl }}/";
                 }) 

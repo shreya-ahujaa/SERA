@@ -12,7 +12,7 @@
                 border-color: #ffffff;
             }
         </style>
-        <script type="text/javascript">
+        <script>
             const login_url = "https://rebeccaaa.tk/authenticate";
             // const login_url = "http://localhost:8192/authenticate";
             function login(){
@@ -32,21 +32,27 @@
                     body: JSON.stringify(data), // convert to JSON
                 };
                 fetch(login_url, options)
-                .then(response => {
-                // check for response errors
-                if (response.status !== 200) {
-                    error('POST API response failure: ' + response.status);
-                    return;
-                }
-                // valid response
-                console.log(data);
-                // redirect on successful login
-                window.location.href = "{{site.baseurl}}/hello";
-                })
-                // catch fetch errors (ie Nginx ACCESS to server blocked)
-                .catch(err => {
-                    error(err + " " + url);
-                });
+                    .then(response => {
+                        // check for response errors
+                        if (response.status !== 200) {
+                            error('POST API response failure: ' + response.status);
+                            return;
+                        }
+                        return response.json(); // parse as JSON
+                    })
+                   .then(data => {
+                        console.log(data); // valid response
+                        console.log(data.data); // get (id) value with key: data
+                        // Store the response in sessionStorage
+                        localStorage.setItem('ID', data.data);
+                        console.log('Data saved in local storage');
+                        // redirect on successful login
+                        window.location.href = "{{ site.baseurl }}/profile"; // direct to profile once logged in
+                    })
+                    // catch fetch errors (ie Nginx ACCESS to server blocked)
+                    .catch(err => {
+                        error(err + " " + url);
+                    });
             }    
             // Something went wrong with actions or responses
             function error(err) {
