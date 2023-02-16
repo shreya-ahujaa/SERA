@@ -152,7 +152,7 @@
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
-                    error(err + " " + url);
+                    error(err + " " + like_api_url);
                 });
             } 
             function dislike_review(review_id){
@@ -180,7 +180,7 @@
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
-                    error(err + " " + url);
+                    error(err + " " + dislike_api_url);
                 });
             }    
    
