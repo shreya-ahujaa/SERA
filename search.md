@@ -12,12 +12,9 @@
                 border-color: #ffffff;
             }
         </style>
-        </head>
-        </body>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </body>
+        <form class="d-flex" role="search">
+                <input type="text" class="form-control me-2" id="term" placeholder="Search Club">
+        </form>
         <script type="text/javascript">
             const search_url = "https://rebeccaaa.tk/api/club/search";    
         function clubSearch() {
