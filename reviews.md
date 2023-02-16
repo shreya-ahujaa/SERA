@@ -25,7 +25,7 @@
         <div>
         <h2 class="text-center m-5 text-success">Add Review</h2>
         <input type="text" id="review" name="review" size="20" required>
-        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
+        <button class="btn text-nowrap my-3 mx-5" background-color=green type="submit" onclick="add_review()">Add</button>
         </div>
         <script type="text/javascript">
             // prepare fetch urls
@@ -120,7 +120,7 @@
                     // valid response
                     console.log(review_text);
                     // redirect on successful add review
-                    window.location.href = get_url;
+                    window.location.href = window.location;
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {

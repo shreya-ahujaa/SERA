@@ -80,6 +80,10 @@
                         advisor.innerHTML = row.advisor;
                         meeting.innerHTML = row.meeting;
                         info.innerHTML = row.info;
+                        var review_link = document.createElement('a');
+                        var review_str = "{{ site.baseurl }}/reviews?id=" + row.id;
+                        review_link.setAttribute('href', review_str);
+                        reviews.appendChild(review_link);
                         // official.innerHTML = row.official;
                         // add all columns to the row
                         tr.appendChild(id);
