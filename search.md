@@ -12,10 +12,15 @@
                 border-color: #ffffff;
             }
         </style>
+        </head>
+        </body>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </body>
         <script type="text/javascript">
             const search_url = "https://rebeccaaa.tk/api/club/search";    
         function clubSearch() {
-            window.location.href = "{{ site.baseurl }}/search";
             // fetch standard requires database set to a name-value pair
             const term = document.getElementById("term");
             const body = {
