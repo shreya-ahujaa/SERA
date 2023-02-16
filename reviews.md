@@ -31,9 +31,9 @@
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
-            //const club_id = document.getElementById("id").value;
-            //const get_url = review_url + "/" + club_id;
-            const get_url = review_url + "/25";
+            const params = new URLSearchParams(window.location.search);
+            let club_id = params.get("id");
+            const get_url = review_url + "/" + club_id;
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
@@ -121,7 +121,7 @@
                     // valid response
                     console.log(review_text);
                     // redirect on successful add review
-                    window.location.href = "{{ site.baseurl }}/";
+                    window.location.href = "{{ site.baseurl }}/reviews/25";
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
