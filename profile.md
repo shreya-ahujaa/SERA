@@ -62,7 +62,7 @@
                 <p id="purpose"></p>
             </div>
             <div class="mb-3 px-5">
-                <label class="form-label" for="types">CLUB TYPE(S) (Advocacy, Awareness, Cultural, Environment, Performing Arts, Service, STEM, Visual Arts</label>
+                <label class="form-label" for="types">CLUB TYPE(S)</label>
                 <p id="types"></p>
             </div>
             <div class="mb-3 px-5">
@@ -77,7 +77,7 @@
                 <label class="form-label" for="meeting">MEETING TIME AND LOCATION</label>
                 <p id="meeting"></p>
             </div>
-            <div class="mb-5 px-5">
+            <div class="mb-3 px-5">
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
                 <p id="info"></p>
             </div>
