@@ -19,7 +19,7 @@
                 <input type="text" class="form-control" id="term" placeholder="Search Club">
         </form>
         <label></label>
-        <button class="btn btn-success" onclick="clubSearch()">Search</button>
+        <button class="btn btn-success" onclick="clubSearch();">Search</button>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
