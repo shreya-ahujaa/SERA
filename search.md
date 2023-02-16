@@ -15,11 +15,11 @@
     </head>
     <body>
         <h1 class="text-center m-5 text-success">Search Results</h1>
-         <form class="d-flex" role="search">
-                <input type="text" class="form-control" id="term" placeholder="Search Club">
-        </form>
-        <label></label>
-        <button class="btn btn-success" onclick="clubSearch();">Search</button>
+         <div class="mb-3 px-5">
+                <label class="form-label" for="term">Search Term</label>
+                <input class="form-control" type="text" id="term" name="term" size="50" required>
+        </div>    
+        <button class="btn btn-success" onclick="clubSearch()">Search</button>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
@@ -34,9 +34,6 @@
                         <th scope="col">Meeting Time and Location</th>
                         <th scope="col">Additional Info</th>
                         <!-- <th scope="col">Official Club?</th> -->
-                        <!-- Links -->
-                        <th scope="col">Meeting Minutes</th>
-                        <th scope="col">Reviews</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider" id="clubs">
@@ -44,15 +41,15 @@
             </table>
         </div>
         <script>
-            // fetch standard requires database set to a name-value pair
-            const term = document.getElementById("term");
-            const data = {
-                term: term.value,
-            };
            // prepare fetch urls
+            // const search_url = "http://localhost:8192/api/club/search";
             const search_url = "https://rebeccaaa.tk/api/club/search";
-            // const search_url = "https://rebeccaaa.tk/api/club/search";
             const searchContainer = document.getElementById("clubs");
+            function clubSearch(){
+            // fetch standard requires database set to a name-value pair
+            var term = document.getElementById("term").value;
+            let data = {term: term};
+            console.log(data);
             const search_options = {
                 method: 'POST',
                 mode: 'cors',
@@ -63,13 +60,9 @@
                 },
                 body: JSON.stringify(data), // convert to JSON
             };
-            function clubSearch(){
             // fetch the API
             fetch(search_url, search_options)
                 // response is a RESTful "promise" on any successful fetch
-                  while (resultContainer.firstChild) {
-                    resultContainer.removeChild(resultContainer.firstChild);
-                }
                 .then(response => {
                 // check for response errors
                 if (response.status !== 200) {
@@ -79,6 +72,7 @@
                 // valid response will have JSON data
                 response.json().then(data => {
                     let i = 1;
+                    searchContainer.innerHTML = "";
                     for (const row of data) {
                         console.log(row);
                         // columns
