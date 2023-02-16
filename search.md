@@ -50,7 +50,7 @@
                 term: term.value,
             };
            // prepare fetch urls
-            const search_url = "http://localhost:8192/api/club/search";
+            const search_url = "https://rebeccaaa.tk/api/club/search";
             // const search_url = "https://rebeccaaa.tk/api/club/search";
             const searchContainer = document.getElementById("clubs");
             const search_options = {
