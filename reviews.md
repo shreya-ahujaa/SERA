@@ -95,8 +95,7 @@
                 tr.appendChild(td);
                 reviewContainer.appendChild(tr);
             }
-            // const addreview_url = "http://localhost:8192/database/addreview/25";
-            const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+            const addreview_url = "https://rebeccaaa.tk/database/addreview/" + club_id;
             function add_review(){
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
@@ -121,7 +120,7 @@
                     // valid response
                     console.log(review_text);
                     // redirect on successful add review
-                    window.location.href = "{{ site.baseurl }}/reviews/25";
+                    window.location.href = get_url;
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
