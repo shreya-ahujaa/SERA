@@ -58,9 +58,9 @@
                 mode: 'cors',
                 cache: 'no-cache',
                 credentials: 'include',
-                headers: {
+                headers: new headers({
                 'Content-Type': 'application/json'
-                },
+                }),
                 body: JSON.stringify(data), // convert to JSON
             };
             function clubSearch(){
