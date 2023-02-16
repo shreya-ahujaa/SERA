@@ -84,7 +84,7 @@
                         var review_str = "{{ site.baseurl }}/reviews?id=" + row.id;
                         //review_link.setAttribute('href', review_str);
                         //reviews.appendChild(review_link);
-                        reviews.innerHTML = '<a href="' + review_str +'">' + review_str + '</a>';
+                        reviews.innerHTML = '<a href="' + review_str +'">' + "Reviews for " + row.name + '</a>';
                         // official.innerHTML = row.official;
                         // add all columns to the row
                         tr.appendChild(id);
