@@ -31,7 +31,7 @@
                 foo: "bar"
             };
             // fetch call with header options
-            fetch('/api/club/search', {
+            fetch('https://rebeccaaa.tk/api/club/search', {
                 method: "POST",
                 credentials: "include",
                 body: JSON.stringify(body),
