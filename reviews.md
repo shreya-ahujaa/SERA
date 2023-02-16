@@ -12,10 +12,10 @@
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
-                        <th style="width=10%" scope="col">ID</th>
-                        <th style="width=70%"scope="col">Review</th>
-                        <th style="width=10%"scope="col">Likes</th>
-                        <th style="width=10%"scope="col">Dislikes</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Review</th>
+                        <th scope="col">Likes</th>
+                        <th scope="col">Dislikes</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider" id="reviews">
@@ -68,8 +68,10 @@
                         // accessing JSON values
                         review_id.innerHTML = row.id;
                         review.innerHTML = row.text;
-                        likes.innerHTML = row.likes;
-                        dislikes.innerHTML = row.dislikes;
+                        var like_api_url = "https://rebeccaaa.tk/database/like/" + row.id;
+                        likes.innerHTML = '<a href="' + like_api_url +'">' + row.likes + '</a>';
+                        var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + row.id;
+                        dislikes.innerHTML = '<a href="' + dislike_api_url +'">' + row.dislikes + '</a>';
                         // add all columns to the row
                         tr.appendChild(review_id);
                         tr.appendChild(review);
