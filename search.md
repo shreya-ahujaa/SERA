@@ -58,15 +58,18 @@
                 mode: 'cors',
                 cache: 'no-cache',
                 credentials: 'include',
-                headers: new headers({
+                headers: {
                 'Content-Type': 'application/json'
-                }),
+                },
                 body: JSON.stringify(data), // convert to JSON
             };
             function clubSearch(){
             // fetch the API
             fetch(search_url, search_options)
                 // response is a RESTful "promise" on any successful fetch
+                  while (resultContainer.firstChild) {
+                    resultContainer.removeChild(resultContainer.firstChild);
+                }
                 .then(response => {
                 // check for response errors
                 if (response.status !== 200) {
