@@ -14,7 +14,7 @@
                         <th scope="col">Staff Advisor</th>
                         <th scope="col">Meeting Time and Location</th>
                         <th scope="col">Additional Info</th>
-                        <th scope="col">Official Club?</th>
+                        <!-- <th scope="col">Official Club?</th> -->
                         <!-- Links -->
                         <th scope="col">Meeting Minutes</th>
                         <th scope="col">Reviews</th>
@@ -66,7 +66,7 @@
                         const advisor = document.createElement("td");
                         const meeting = document.createElement("td");
                         const info = document.createElement("td");
-                        const official = document.createElement("td");
+                        // const official = document.createElement("td");
                         // url containers
                         const minutes = document.createElement("td");
                         const reviews = document.createElement("td");
@@ -80,7 +80,9 @@
                         advisor.innerHTML = row.advisor;
                         meeting.innerHTML = row.meeting;
                         info.innerHTML = row.info;
-                        official.innerHTML = row.official;
+                        var review_str = "{{ site.baseurl }}/reviews?id=" + row.id;
+                        reviews.innerHTML = '<a href="' + review_str +'">' + "Reviews for " + row.name + '</a>';
+                        // official.innerHTML = row.official;
                         // add all columns to the row
                         tr.appendChild(id);
                         tr.appendChild(name);
@@ -91,7 +93,7 @@
                         tr.appendChild(advisor);
                         tr.appendChild(meeting);
                         tr.appendChild(info);
-                        tr.appendChild(official);
+                        // tr.appendChild(official);
                         tr.appendChild(minutes);
                         tr.appendChild(reviews);
                         // add row to table

@@ -23,17 +23,17 @@
             </table>
         </div>
         <div>
-        <h2 class="text-center m-5 text-success">Add Review</h2>
+        <h2 class="text-left m-5 text-success">Add Review</h2>
         <input type="text" id="review" name="review" size="20" required>
-        <button class="btn text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
+        <button class="btn btn-success text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
         </div>
         <script type="text/javascript">
             // prepare fetch urls
             // const review_url = "http://localhost:8192/database/reviews";
             const review_url = "https://rebeccaaa.tk/database/reviews";
-            //const club_id = document.getElementById("id").value;
-            //const get_url = review_url + "/" + club_id;
-            const get_url = review_url + "/25";
+            const params = new URLSearchParams(window.location.search);
+            let club_id = params.get("id");
+            const get_url = review_url + "/" + club_id;
             const reviewContainer = document.getElementById("reviews");
             // prepare fetch GET options
             const options = {
@@ -68,8 +68,8 @@
                         // accessing JSON values
                         review_id.innerHTML = row.id;
                         review.innerHTML = row.text;
-                        likes.innerHTML = row.likes;
-                        dislikes.innerHTML = row.dislikes;
+                        likes.innerHTML = '<a href="#" onclick="like_review(\'' + row.id + '\')">' + row.likes + '</a>';
+                        dislikes.innerHTML = '<a href="#" onclick="dislike_review(\'' + row.id + '\')">' + row.dislikes + '</a>';
                         // add all columns to the row
                         tr.appendChild(review_id);
                         tr.appendChild(review);
@@ -95,8 +95,7 @@
                 tr.appendChild(td);
                 reviewContainer.appendChild(tr);
             }
-            // const addreview_url = "http://localhost:8192/database/addreview/25";
-            const addreview_url = "https://rebeccaaa.tk/database/addreview/25";
+            const addreview_url = "https://rebeccaaa.tk/database/addreview/" + club_id;
             function add_review(){
                 var review_text = document.getElementById("review").value;
                 // store data in JavaScript object
@@ -121,13 +120,70 @@
                     // valid response
                     console.log(review_text);
                     // redirect on successful add review
-                    window.location.href = "{{ site.baseurl }}/";
+                    window.location.href = window.location;
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
                     error(err + " " + url);
                 });
             }    
+            function like_review(review_id){
+                // store data in JavaScript object
+                const options = {
+                    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'include', // include, same-origin, omit
+                    headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                };
+                var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
+                fetch(like_api_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // redirect on successful add review
+                    window.location.href = window.location;
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + like_api_url);
+                });
+            } 
+            function dislike_review(review_id){
+                // store data in JavaScript object
+                const options = {
+                    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'include', // include, same-origin, omit
+                    headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                };
+                var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
+                fetch(dislike_api_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // redirect on successful add review
+                    window.location.href = window.location;
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + dislike_api_url);
+                });
+            }    
+   
         </script>
     </body>
 </html>

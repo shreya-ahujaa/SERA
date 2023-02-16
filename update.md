@@ -17,7 +17,7 @@
             // const update_url = "http://localhost:8192/api/club/update/";
             function update(){
                 var email = document.getElementById("username").value;
-                var password = document.getElementById("password").value;
+                var pwd = document.getElementById("password").value;
                 var name = document.getElementById("name").value;
                 var purpose = document.getElementById("purpose").value;
                 var types = document.getElementById("types").value;
@@ -25,11 +25,14 @@
                 var advisor = document.getElementById("advisor").value;
                 var meeting = document.getElementById("meeting").value;
                 var info = document.getElementById("info").value;
+                // confirm requirements, matching
+                securePassword();
+                validatePassword();
                 // store data in JavaScript object
-                let data = {email: email, password: password, name: name, types: types, purpose: purpose, president: president, advisor: advisor, meeting: meeting, info: info, official: null};
+                let data = {email: email, password: pwd, name: name, types: types, purpose: purpose, president: president, advisor: advisor, meeting: meeting, info: info, official: null};
                 console.log(data);
                 // get ID of currently logged in user from sessionStorage
-                const storedData = JSON.parse(sessionStorage.getItem('ID'));
+                const storedData = JSON.parse(localStorage.getItem('ID'));
                 console.log(storedData);
                 const options = {
                     method: 'POST',
@@ -77,6 +80,10 @@
             <div class="mb-3 px-5">    
                 <label class="form-label" for="password">PASSWORD</label>
                 <input class="form-control" type="password" id="password" name="password" size="20" required>
+            </div>
+             <div class="mb-3 px-5">
+                <label class="form-label" for="password">RETYPE PASSWORD</label>
+                <input class="form-control" type="password" id="confirm_password" name="password" size="20" required>
             </div>    
             <div class="mb-3 px-5">
                 <label class="form-label" for="name">CLUB NAME</label>
@@ -88,7 +95,8 @@
             </div>    
             <div class="mb-3 px-5">        
                 <label class="form-label" for="types">CLUB TYPE(S)</label>
-                <input class="form-control" type="text" id="types" name="types" size="20" required placedholder="Advocacy/Awareness, Cultural, Environment, Service, STEM, Visual/Performing Arts">
+                <label class="form-label">(Advocacy/Awareness, Athletics, Competition, Computer Science, Cultural, Environment, Other Interests, Service, STEM, Visual/Performing Arts)</label>
+                <input class="form-control" type="text" id="types" name="types" size="20" required>
             </div>    
             <div class="mb-3 px-5">        
                 <label class="form-label" for="president">CLUB PRESIDENT</label>
@@ -104,9 +112,65 @@
             </div>
             <div class="mb-3 px-5">        
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
+                <label class="form-label">(Contact info, registration forms, social media, website)</label>
                 <input class="form-control" type="text" id="info" name="info" size="20">
             </div>
             <button class="btn btn-custom text-nowrap text-light my-3 mx-5 mb-4" type="submit" onclick="update()">Update</button>
         </div>
+        <script>
+             function validatePassword(){
+                if(password.value != confirm_password.value){
+                    confirm_password.setCustomValidity("Passwords Don't Match"); // form won't be submitted
+                } else {
+                    confirm_password.setCustomValidity(''); // matching
+                }
+                confirm_password.reportValidity();
+            }
+            // Get references to the password and confirm_password input fields
+            const password = document.getElementById("password");
+            const confirm_password = document.getElementById("confirm_password");
+            // Add an event listener to the confirm_password field that calls validatePassword() on input
+            confirm_password.addEventListener("input", validatePassword);
+            var myInput = document.getElementById("password");
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+                document.getElementById("message").style.display = "block";
+            }
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+                document.getElementById("message").style.display = "none";
+            }
+            // When the user starts to type something inside the password field
+            password.addEventListener("input", securePassword);
+            function securePassword() {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if(myInput.value.match(lowerCaseLetters)) {  
+                } else {
+                    myInput.setCustomValidity("Password Doesn't Meet Requirements");
+                    myInput.reportValidity();
+                }
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if(myInput.value.match(upperCaseLetters)) {  
+                } else {
+                    myInput.setCustomValidity("Password Doesn't Meet Requirements");
+                    myInput.reportValidity();
+                }
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if(myInput.value.match(numbers)) {  
+                } else {
+                    myInput.setCustomValidity("Password Doesn't Meet Requirements");
+                    myInput.reportValidity();
+                }
+                // Validate length
+                if(myInput.value.length >= 8) {
+                } else {
+                    myInput.setCustomValidity("Password Doesn't Meet Requirements");
+                    myInput.reportValidity();
+                }
+            }
+        </script>
     </body>
 </html>

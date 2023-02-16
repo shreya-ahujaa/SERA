@@ -44,8 +44,8 @@
                         console.log(data); // valid response
                         console.log(data.data); // get (id) value with key: data
                         // Store the response in sessionStorage
-                        sessionStorage.setItem('ID', data.data);
-                        console.log('Data saved in sessionStorage');
+                        localStorage.setItem('ID', data.data);
+                        console.log('Data saved in local storage');
                         // redirect on successful login
                         window.location.href = "{{ site.baseurl }}/profile"; // direct to profile once logged in
                     })

@@ -41,11 +41,7 @@
           <a class="nav-link" href="{{ site.baseurl }}/events_front">Interclub Events</a>
         </li>
       </ul>
-
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success text-nowrap" onclick="clubSearch();">SEARCH CLUBS</button>
-      </form>
+      <a class="btn btn-outline-success text-nowrap" href="{{ site.baseurl }}/search">Club Search</a>
     </div>
   </div>
 </nav>
@@ -71,7 +67,26 @@
         console.log("Logged in");
         // club name or email should go here
         // logout button
-        state.innerHTML = 'test <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><button class="btn btn-success text-nowrap" onclick="logout();">LOGOUT</button>';
+        const storedData = JSON.parse(localStorage.getItem('ID'));
+        console.log(storedData);
+        // const def = "http://localhost:8192/api/club/";
+        const def = "https://rebeccaaa.tk/api/club/";
+        let find = def + storedData;
+        var club = "User";
+        fetch(find, options)
+        .then(response => {
+          if(response.status == 200){
+            response.json().then(data => {
+              console.log(data);
+              console.log(data.name);
+              club = data.name;
+              state.innerHTML ='<img src="./assets/images/rename-user.png" width="40px" height="40px" class="d-inline-block align-text-middle"><div class="btn-group"><button id="club-name" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Placeholder</button><ul class="dropdown-menu"><li><a class="dropdown-item" href="{{ site.baseurl }}/profile">Profile</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="{{ site.baseurl }}/delete">Account</a></li><li><a class="dropdown-item" href="#">Logout</a></li></ul></div>';
+              const cn = document.getElementById("club-name");
+              cn.innerHTML = club;
+            })
+          }
+        })
+        // state.innerHTML = club + ' <img src="./assets/images/rename-user.png" width="25%" height="25%" class="d-inline-block align-text-middle"><button class="btn btn-success text-nowrap">LOGOUT</button>';
       }
       else{
         console.log("Not logged in");

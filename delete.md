@@ -13,12 +13,15 @@
             }
         </style>
         <script>
-            const delete_url = "https://rebeccaaa.tk/api/club/delete/37";
-            // const delete_url = "http://localhost:8192/api/club/delete/37";
+            const delete_url = "https://rebeccaaa.tk/api/club/delete/";
+            // const delete_url = "http://localhost:8192/api/club/delete/";
+            const storedData = JSON.parse(localStorage.getItem('ID'));
+            console.log(storedData);
+            const delete_url_with_id = delete_url + storedData;
             function delete_club(){
                 console.log(delete_url);
                 const options = {
-                    method: 'DELETE',
+                    method: 'POST',
                     mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'include',
@@ -26,11 +29,11 @@
                         'Content-Type': 'application/json'
                     },
                 };
-                fetch(delete_url, options)
+                fetch(delete_url_with_id, options)
                 .then(response => {
                 // check for response errors
                 if (response.status !== 200) {
-                    error('DELETE API response failure: ' + response.status);
+                    error('POST API response failure: ' + response.status);
                     return;
                 }
                 // valid response
