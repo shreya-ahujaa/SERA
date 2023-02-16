@@ -12,10 +12,18 @@
                 border-color: #ffffff;
             }
         </style>
+        <form class="d-flex" role="search">
+                <input type="text" class="form-control" id="term" placeholder="Search Club">
+        </form>
+        <label></label>
+        <button class="btn btn-success" onclick="clubSearch();">Search</button>
+        <div class="container">
+            <div class="row" id="result">
+        </div>
+        </div>
         <script type="text/javascript">
             const search_url = "https://rebeccaaa.tk/api/club/search";    
         function clubSearch() {
-            window.location.href = "{{ site.baseurl }}/search";
             // fetch standard requires database set to a name-value pair
             const term = document.getElementById("term");
             const body = {
@@ -23,7 +31,7 @@
                 foo: "bar"
             };
             // fetch call with header options
-            fetch('/api/club/search', {
+            fetch('https://rebeccaaa.tk/api/club/search', {
                 method: "POST",
                 credentials: "include",
                 body: JSON.stringify(body),
