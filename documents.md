@@ -96,48 +96,49 @@ function documents(){
 
 }
 
-
-  // const signup_url = "http://localhost:8192/api/note/post";
-  function signup(){
-      const signup_url = "https://rebeccaaa.tk/api/note/post";
-      var text = document.getElementById("text").value;
-      var name = document.getElementById("name").value;
-    
-      // store data in JavaScript object
-      let data = {text: text, name: name};
-      console.log(data);
-      const options = {
-          method: 'POST',
-          mode: 'cors',
-          cache: 'no-cache',
-          credentials: 'include',
-          headers: {
-          'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data), // convert to JSON
-      };
-      fetch(signup_url)
-      .then(response => {
-      // check for response errors
-      if (response.status !== 201) {
-          error('POST API response failure: ' + response.status);
-          return;
-      }
-      // valid response
-      console.log(data);
-      // redirect on successful login
-      window.location.href = "{{ site.baseurl }}/";
-      })
-      // catch fetch errors (ie Nginx ACCESS to server blocked)
-      .catch(err => {
-          error(err + " " + url);
-      });
-  }    
-  // Something went wrong with actions or responses
-  function error(err) {
-      // log as Error in console
-      console.log(err);
-  }
+    function signup2(){
+                // get user input
+                const signup_url = "https://rebeccaaa.tk/api/note/post" + id;
+                var text = document.getElementById("text").value;
+                var id = document.getElementById("id").value;
+                // confirm requirements, matching
+                securePassword();
+                validatePassword();
+                // store data in JavaScript object
+                let data = {id: id, text: text};
+                console.log(data);
+                const options = {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data), // convert to JSON
+                };
+                fetch(signup_url)
+                .then(response => {
+                // check for response errors
+                if (response.status !== 201) {
+                    error('POST API response failure: ' + response.status);
+                    return;
+                }
+                // valid response
+                console.log(data);
+                // redirect on successful login
+                window.location.href = "{{ site.baseurl }}/note";
+                })
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + url);
+                });
+            }
+            // Something went wrong with actions or responses
+            function error(err) {
+                // log as Error in console
+                console.log(err);
+            }
 
 
 </script>
