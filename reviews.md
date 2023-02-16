@@ -12,10 +12,10 @@
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Review</th>
-                        <th scope="col">Likes</th>
-                        <th scope="col">Dislikes</th>
+                        <th style="width=10%" scope="col">ID</th>
+                        <th style="width=70%"scope="col">Review</th>
+                        <th style="width=10%"scope="col">Likes</th>
+                        <th style="width=10%"scope="col">Dislikes</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider" id="reviews">
@@ -23,9 +23,9 @@
             </table>
         </div>
         <div>
-        <h2 class="text-center m-5 text-success">Add Review</h2>
+        <h2 class="text-left m-5 text-success">Add Review</h2>
         <input type="text" id="review" name="review" size="20" required>
-        <button class="btn text-nowrap my-3 mx-5" background-color=green type="submit" onclick="add_review()">Add</button>
+        <button class="btn btn-success text-nowrap my-3 mx-5" type="submit" onclick="add_review()">Add</button>
         </div>
         <script type="text/javascript">
             // prepare fetch urls
