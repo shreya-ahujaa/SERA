@@ -68,10 +68,8 @@
                         // accessing JSON values
                         review_id.innerHTML = row.id;
                         review.innerHTML = row.text;
-                        var like_api_url = "https://rebeccaaa.tk/database/like/" + row.id;
-                        likes.innerHTML = '<a href="' + like_api_url +'">' + row.likes + '</a>';
-                        var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + row.id;
-                        dislikes.innerHTML = '<a href="' + dislike_api_url +'">' + row.dislikes + '</a>';
+                        likes.innerHTML = '<a href="#" onclick="like_review(' + row.id +');">' + row.likes + '</a>';
+                        dislikes.innerHTML = '<a href="#" onclick=dislike_review(' + row.id +');">' + row.dislikes + '</a>';
                         // add all columns to the row
                         tr.appendChild(review_id);
                         tr.appendChild(review);
@@ -129,6 +127,61 @@
                     error(err + " " + url);
                 });
             }    
+            function like_review(review_id){
+                // store data in JavaScript object
+                const options = {
+                    method: 'PUT',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'text/html; charset=utf-8'
+                    }
+                };
+                var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
+                fetch(like_review_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // redirect on successful add review
+                    window.location.href = window.location;
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + url);
+                });
+            } 
+            function dislike_review(review_id){
+                // store data in JavaScript object
+                const options = {
+                    method: 'PUT',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'text/html; charset=utf-8'
+                    }
+                };
+                var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
+                fetch(dislike_review_url, options)
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 201) {
+                        error('POST API response failure: ' + response.status);
+                        return;
+                    }
+                    // redirect on successful add review
+                    window.location.href = window.location;
+                }) 
+                // catch fetch errors (ie Nginx ACCESS to server blocked)
+                .catch(err => {
+                    error(err + " " + url);
+                });
+            }    
+   
         </script>
     </body>
 </html>
