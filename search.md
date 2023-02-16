@@ -16,7 +16,7 @@
                 <input type="text" class="form-control" id="term" placeholder="Search Club">
         </form>
         <label></label>
-        <button class="btn btn-outline-success text-nowrap" onclick="clubSearch();">Search</button>
+        <button class="btn btn-success" onclick="clubSearch();">Search</button>
         <div class="container">
             <div class="row" id="result">
         </div>
