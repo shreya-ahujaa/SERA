@@ -97,7 +97,8 @@
                 <input class="form-control" type="text" id="purpose" name="purpose" size="250" required>
             </div>
             <div class="mb-3 px-5">
-                <label class="form-label" for="types">CLUB TYPE(S) (Advocacy/Awareness, Competition, Cultural, Environment, Service, STEM, Visual/Performing Arts)</label>
+                <label class="form-label" for="types">CLUB TYPE(S)</label>
+                <label class="form-label">(Advocacy/Awareness, Athletics, Competition, Computer Science, Cultural, Environment, Other Interests, Service, STEM, Visual/Performing Arts)</label>
                 <input class="form-control" type="text" id="types" name="types" size="20" required>
             </div>
             <div class="mb-3 px-5">
@@ -114,6 +115,7 @@
             </div>
             <div class="mb-3 px-5">
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
+                <label class="form-label">(Contact info, registration forms, social media, website)</label>
                 <input class="form-control" type="text" id="info" name="info" size="200">
             </div>
             <button class="btn btn-custom text-nowrap text-light my-3 mx-5" type="submit" onclick="signup()">Sign Up</button>

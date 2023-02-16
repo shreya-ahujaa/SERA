@@ -95,7 +95,8 @@
             </div>    
             <div class="mb-3 px-5">        
                 <label class="form-label" for="types">CLUB TYPE(S)</label>
-                <input class="form-control" type="text" id="types" name="types" size="20" required placedholder="Advocacy/Awareness, Cultural, Environment, Service, STEM, Visual/Performing Arts">
+                <label class="form-label">(Advocacy/Awareness, Athletics, Competition, Computer Science, Cultural, Environment, Other Interests, Service, STEM, Visual/Performing Arts)</label>
+                <input class="form-control" type="text" id="types" name="types" size="20" required>
             </div>    
             <div class="mb-3 px-5">        
                 <label class="form-label" for="president">CLUB PRESIDENT</label>
@@ -111,6 +112,7 @@
             </div>
             <div class="mb-3 px-5">        
                 <label class="form-label" for="info">ADDITIONAL INFO</label>
+                <label class="form-label">(Contact info, registration forms, social media, website)</label>
                 <input class="form-control" type="text" id="info" name="info" size="20">
             </div>
             <button class="btn btn-custom text-nowrap text-light my-3 mx-5 mb-4" type="submit" onclick="update()">Update</button>
