@@ -72,11 +72,9 @@ button {
 </style>
 <script>
 
-//is leap year code
-
 function documents(){
     var id = document.getElementById("id").value;
-    var str_url = "https://rebeccaaa.tk/api/note/" + id;
+    var str_url = "http://localhost:8192/api/note/" + id;
     console.log(str_url);
     fetch(str_url)
     // response is a RESTful "promise" on any successful fetch
@@ -99,7 +97,7 @@ function documents(){
 }
 
 
-  // const signup_url = "http://localhost:8192/api/club/post";
+  // const signup_url = "http://localhost:8192/api/note/post";
   function signup(){
       const signup_url = "https://rebeccaaa.tk/api/note/post";
       var text = document.getElementById("text").value;
