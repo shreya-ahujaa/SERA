@@ -15,7 +15,12 @@
         <form class="d-flex" role="search">
                 <input type="text" class="form-control" id="term" placeholder="Search Club">
         </form>
+        <label></label>
         <button class="btn btn-outline-success text-nowrap" onclick="clubSearch();">Search</button>
+        <div class="container">
+            <div class="row" id="result">
+        </div>
+        </div>
         <script type="text/javascript">
             const search_url = "https://rebeccaaa.tk/api/club/search";    
         function clubSearch() {
