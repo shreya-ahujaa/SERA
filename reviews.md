@@ -139,7 +139,7 @@
                     }
                 };
                 var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
-                fetch(like_review_url, options)
+                fetch(like_api_url, options)
                 .then(response => {
                     // check for response errors
                     if (response.status !== 201) {
@@ -166,7 +166,7 @@
                     }
                 };
                 var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
-                fetch(dislike_review_url, options)
+                fetch(dislike_api_url, options)
                 .then(response => {
                     // check for response errors
                     if (response.status !== 201) {
