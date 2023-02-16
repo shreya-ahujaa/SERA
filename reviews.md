@@ -68,8 +68,8 @@
                         // accessing JSON values
                         review_id.innerHTML = row.id;
                         review.innerHTML = row.text;
-                        likes.innerHTML = '<a href="#" onclick="like_review(' + row.id +');">' + row.likes + '</a>';
-                        dislikes.innerHTML = '<a href="#" onclick=dislike_review(' + row.id +');">' + row.dislikes + '</a>';
+                        likes.innerHTML = '<a href="#" onclick="like_review(\'' + row.id + '\');">' + row.likes + '</a>';
+                        dislikes.innerHTML = '<a href="#" onclick=dislike_review(\'' + row.id + '\');">' + row.dislikes + '</a>';
                         // add all columns to the row
                         tr.appendChild(review_id);
                         tr.appendChild(review);
