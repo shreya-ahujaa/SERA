@@ -105,7 +105,7 @@ function documents(){
                 // confirm requirements, matchin
                 // store data in JavaScript object
                 let data = {id: id, text: text};
-                document.getElementById("document_result").innerHTML = "Document for ID:" + id+ " was successfully creasted!";
+                document.getElementById("note_post_result").innerHTML = "Document for ID:" + id+ " was successfully creasted!";
                 console.log(data);
                 const options = {
                     method: 'POST',
