@@ -114,7 +114,7 @@ function documents(){
                     headers: {
                     'Content-Type': 'application/json'
                     },
-                   // body: JSON.stringify(data), // convert to JSON
+                  body: data, // convert to JSON
                 };
                 fetch(signup_url, options)
                 .then(response => {
