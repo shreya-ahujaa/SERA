@@ -16,7 +16,7 @@
     <body>
         <h1 class="text-center m-5 text-success">Search Results</h1>
          <div class="mb-3 px-5">
-                <input class="form-control" type="text" id="term" name="term" size="50" required placeholder="term">
+                <input class="form-control" type="text" id="term" name="term" size="50" required placeholder="search clubs">
                 <button class="mt-2 btn btn-success" onclick="clubSearch()">Search</button>
         </div>  
         <div class="table-responsive mx-5">
