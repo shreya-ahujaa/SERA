@@ -98,7 +98,7 @@ function documents(){
 
     function signup2(){
                 // get user input
-                const signup_url = "https://rebeccaaa.tk/api/note/post" + id;
+                const signup_url = "http://localhost:8192/api/note/post/" + id;
                 var text = document.getElementById("text").value;
                 var id = document.getElementById("id").value;
                 // confirm requirements, matching
@@ -166,7 +166,7 @@ function documents(){
 
 
 <div class="buttons-container">
-  <button class="button-arounder" onclick="signup()">Submit (new notes)</button>
+  <button class="button-arounder" onclick="signup2()">Submit (new notes)</button>
 </div>
 <br>
 <br>
