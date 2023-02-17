@@ -16,10 +16,9 @@
     <body>
         <h1 class="text-center m-5 text-success">Search Results</h1>
          <div class="mb-3 px-5">
-                <label class="form-label" for="term">Search Term</label>
-                <input class="form-control" type="text" id="term" name="term" size="50" required>
-        </div>    
-        <button class="btn btn-success" onclick="clubSearch()">Search</button>
+                <input class="form-control" type="text" id="term" name="term" size="50" required placeholder="term">
+                <button class="mt-2 btn btn-success" onclick="clubSearch()">Search</button>
+        </div>  
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
