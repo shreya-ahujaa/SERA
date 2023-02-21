@@ -130,14 +130,11 @@
             function like_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-                    mode: 'cors', // no-cors, *cors, same-origin
-                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                    credentials: 'include', // include, same-origin, omit
-                    headers: {
-                    'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-                    },
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include'
+                    }
                 };
                 var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
                 fetch(like_api_url, options)
@@ -158,14 +155,11 @@
             function dislike_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-                    mode: 'cors', // no-cors, *cors, same-origin
-                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                    credentials: 'include', // include, same-origin, omit
-                    headers: {
-                    'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-                    },
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include'
+                    }
                 };
                 var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
                 fetch(dislike_api_url, options)
