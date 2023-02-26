@@ -134,7 +134,6 @@
                     mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'include'
-                    }
                 };
                 var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
                 fetch(like_api_url, options)
@@ -159,7 +158,6 @@
                     mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'include'
-                    }
                 };
                 var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
                 fetch(dislike_api_url, options)
@@ -177,7 +175,6 @@
                     error(err + " " + dislike_api_url);
                 });
             }    
-   
         </script>
     </body>
 </html>
