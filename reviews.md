@@ -131,9 +131,9 @@
                 // store data in JavaScript object
                 const options = {
                     method: 'PUT',
-                    mode: 'cors',
-                    cache: 'no-cache',
-                    credentials: 'include',
+                    //mode: 'cors',
+                    cache: 'default',
+                    //credentials: 'include',
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
@@ -158,9 +158,9 @@
                 // store data in JavaScript object
                 const options = {
                     method: 'PUT',
-                    mode: 'cors',
-                    cache: 'no-cache',
-                    credentials: 'include',
+                    // mode: 'cors',
+                    cache: 'default',
+                    // credentials: 'include',
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
