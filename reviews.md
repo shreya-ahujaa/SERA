@@ -130,17 +130,20 @@
             function like_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'POST',
+                    method: 'PUT',
                     mode: 'cors',
                     cache: 'no-cache',
-                    credentials: 'include'
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'text/html; charset=utf-8'
+                    },
                 };
                 var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
                 fetch(like_api_url, options)
                 .then(response => {
                     // check for response errors
-                    if (response.status !== 201) {
-                        error('POST API response failure: ' + response.status);
+                    if (response.status !== 200) {
+                        error('PUT API response failure: ' + response.status);
                         return;
                     }
                     // redirect on successful add review
@@ -154,17 +157,20 @@
             function dislike_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'POST',
+                    method: 'PUT',
                     mode: 'cors',
                     cache: 'no-cache',
-                    credentials: 'include'
+                    credentials: 'include',
+                    headers: {
+                    'Content-Type': 'text/html; charset=utf-8'
+                    },
                 };
                 var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
                 fetch(dislike_api_url, options)
                 .then(response => {
                     // check for response errors
-                    if (response.status !== 201) {
-                        error('POST API response failure: ' + response.status);
+                    if (response.status !== 200) {
+                        error('PUT API response failure: ' + response.status);
                         return;
                     }
                     // redirect on successful add review
