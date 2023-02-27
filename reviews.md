@@ -130,10 +130,10 @@
             function like_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'PUT',
-                    //mode: 'cors',
-                    cache: 'default',
-                    //credentials: 'include',
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
@@ -143,7 +143,7 @@
                 .then(response => {
                     // check for response errors
                     if (response.status !== 200) {
-                        error('PUT API response failure: ' + response.status);
+                        error('POST API response failure: ' + response.status);
                         return;
                     }
                     // redirect on successful add review
@@ -158,9 +158,9 @@
                 // store data in JavaScript object
                 const options = {
                     method: 'PUT',
-                    // mode: 'cors',
-                    cache: 'default',
-                    // credentials: 'include',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'include',
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
@@ -170,7 +170,7 @@
                 .then(response => {
                     // check for response errors
                     if (response.status !== 200) {
-                        error('PUT API response failure: ' + response.status);
+                        error('POST API response failure: ' + response.status);
                         return;
                     }
                     // redirect on successful add review
