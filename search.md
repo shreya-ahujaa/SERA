@@ -40,7 +40,8 @@
             </table>
         </div>
         <div class="mb-3 px-5">
-                <h4 class="text-center m-5 text-success">Search Count</h4><h4 id="searchCount" name="searchCount" class="">0</h4>
+                <label class="">Search Count</label>
+                <label class="" id="searchCountValue">0</label>
                 <button class="mt-2 btn btn-success" onclick="clearSearchHistory()">Clear Search History</button>
         </div>
         <script>
@@ -75,8 +76,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => { 
-                        var searchCount = document.getElementById("searchCount");
-                        searchCount.value = data.searchCount;                        
+                        document.getElementById("searchCountValue").innerHtml = data.searchCount;
                     })
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
@@ -112,8 +112,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => {
-                        var searchCount = document.getElementById("searchCount");
-                        searchCount.value = data.searchCount;                        
+                        document.getElementById("searchCountValue").innerHtml = data.searchCount;    
                         //
                         // data.searchCount
                         let i = 1;
