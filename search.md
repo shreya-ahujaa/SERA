@@ -75,7 +75,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => { 
-                        var searchCount = document.getElementById("searchCount").value;
+                        var searchCount = document.getElementById("searchCount");
                         searchCount.value = data.searchCount;                        
                     })
                 })
@@ -112,7 +112,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => {
-                        var searchCount = document.getElementById("searchCount").value;
+                        var searchCount = document.getElementById("searchCount");
                         searchCount.value = data.searchCount;                        
                         //
                         // data.searchCount
