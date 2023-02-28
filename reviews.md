@@ -157,7 +157,7 @@
             function dislike_review(review_id){
                 // store data in JavaScript object
                 const options = {
-                    method: 'PUT',
+                    method: 'POST',
                     mode: 'cors',
                     cache: 'no-cache',
                     credentials: 'include',
