@@ -56,7 +56,7 @@
                 // clear search history
                 //
                 const history_options = {
-                    method: 'DELETE',// posting the results to the site because using a new page -- wouldve used get if jsut search bar
+                    method: 'POST',// posting the results to the site because using a new page -- wouldve used get if jsut search bar
                     mode: 'cors', //cross origin resourche sharing 
                     cache: 'no-cache', //force the browser to check the server to see if the file is different from the file it already has in the cache-- make sure not reusing a url that was never changed 
                     credentials: 'include', //deals with cookies, authorization, etc. 
