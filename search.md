@@ -46,11 +46,10 @@
         </div>
         <script>
             // prepare fetch urls
-            const clearhistoryUrl = "http://localhost:8192/api/club/clearHistory";
-            const search_url = "http://localhost:8192/api/club/search";
-            // origionally was going to use local host but problem with main java because of some update being behind so switched to deployed link 
-            // const clear_history_url = "https://rebeccaaa.tk/api/club/clearHistory";
-            // const search_url = "https://rebeccaaa.tk/api/club/search";
+            const host = "http://localhost:8192";
+            // const host = "https://rebeccaaa.tk";
+            const clear_history_url = host + "/api/club/clearHistory";
+            const search_url = host + "/api/club/search";
             const searchContainer = document.getElementById("clubs");
             //declares the scope and what it is looking for 
             function clearSearchHistory(){
