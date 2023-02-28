@@ -46,8 +46,8 @@
         </div>
         <script>
             // prepare fetch urls
-            const host = "http://localhost:8192";
-            // const host = "https://rebeccaaa.tk";
+            //const host = "http://localhost:8192";
+            const host = "https://rebeccaaa.tk";
             const clear_history_url = host + "/api/club/clearHistory";
             const search_url = host + "/api/club/search";
             const searchContainer = document.getElementById("clubs");
