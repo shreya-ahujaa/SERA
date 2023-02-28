@@ -76,7 +76,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => { 
-                        document.getElementById("searchCountValue").innerText = Long.toString(data.searchCount)
+                        document.getElementById("searchCountValue").innerText = data.searchCount.toString();
                     })
                 })
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
@@ -112,7 +112,7 @@
                     }
                     // valid response will have JSON data
                     response.json().then(data => {
-                        document.getElementById("searchCountValue").innerText = Long.toString(data.searchCount);
+                        document.getElementById("searchCountValue").innerText = data.searchCount.toString();
                         //
                         // data.searchCount
                         let i = 1;
