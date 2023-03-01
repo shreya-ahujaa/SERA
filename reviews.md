@@ -120,7 +120,7 @@
                     // valid response
                     console.log(review_text);
                     // redirect on successful add review
-                    window.location.href = window.location;
+                    window.location.reload();
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
@@ -148,7 +148,7 @@
                         return;
                     }
                     // redirect on successful add review
-                    window.location.href = window.location;
+                    window.location.reload();
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
@@ -176,7 +176,7 @@
                         return;
                     }
                     // redirect on successful add review
-                    window.location.href = window.location;
+                    window.location.reload();
                 }) 
                 // catch fetch errors (ie Nginx ACCESS to server blocked)
                 .catch(err => {
