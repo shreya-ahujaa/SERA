@@ -57,6 +57,7 @@
                 }
                 // valid response will have JSON data
                 response.json().then(data => {
+                    let i = 1;
                     for (const row of data) {
                         console.log(row);
                         // columns
@@ -66,7 +67,7 @@
                         const likes = document.createElement("td");
                         const dislikes = document.createElement("td");
                         // accessing JSON values
-                        review_id.innerHTML = row.id;
+                        review_id.innerHTML = i++;
                         review.innerHTML = row.text;
                         likes.innerHTML = '<a href="#" onclick="like_review(\'' + row.id + '\')">' + row.likes + '</a>';
                         dislikes.innerHTML = '<a href="#" onclick="dislike_review(\'' + row.id + '\')">' + row.dislikes + '</a>';
