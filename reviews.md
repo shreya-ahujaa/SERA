@@ -137,13 +137,14 @@
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
+                    body: review_id,
                 };
                 var like_api_url = "https://rebeccaaa.tk/database/like/" + review_id;
                 fetch(like_api_url, options)
                 .then(response => {
                     // check for response errors
                     if (response.status !== 200) {
-                        error('POST API response failure: ' + response.status);
+                        error('POST API response failure: ' + like_api_url + " : " + response.status);
                         return;
                     }
                     // redirect on successful add review
@@ -164,13 +165,14 @@
                     headers: {
                     'Content-Type': 'text/html; charset=utf-8'
                     },
+                    body: review_id,
                 };
                 var dislike_api_url = "https://rebeccaaa.tk/database/dislike/" + review_id;
                 fetch(dislike_api_url, options)
                 .then(response => {
                     // check for response errors
                     if (response.status !== 200) {
-                        error('POST API response failure: ' + response.status);
+                        error('POST API response failure: ' + dislike_api_url + " : " + response.status);
                         return;
                     }
                     // redirect on successful add review
